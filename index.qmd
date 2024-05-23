@@ -1,11 +1,70 @@
 ---
 title: "Alex Günsberg"
+about:
+    template: trestles
+    links:
+        - icon: linkedin
+          text: LinkedIn
+          url: https://www.linkedin.com/in/gunsberg/
+        - icon: twitter-x
+          url: https://x.com/alex_gunsberg
+        - icon: github
+          text: Github
+          url: https://github.com/alexgunsberg
+        - icon: envelope
+          url: mailto:gunsberg.rickety052@passmail.net
+        - icon: graph-up-arrow
+          text: DataCamp
+          url: https://datacamp.com/profile/alexgunsberg
+
+image: BrandPhoto_Niord_PREMIUM_0013_Alex_Gunsberg_web.jpg
+comments: false
 ---
 
-This is a Quarto website.
+<script type='application/ld+json'>
+{"@context":"http://www.schema.org","@type":"person","name":"Alex Günsberg","jobTitle":"Doctoral Researcher","description":"Alex is a passionate and driven PhD Candidate working in the intersection of Household, Consumer and Beharioral Finance.","url":"https://alexgunsberg.com","image":"BrandPhoto_Niord_PREMIUM_0013_Alex_Gunsberg_web.jpg","address":{"@type":"PostalAddress","addressLocality":"Helsinki","addressCountry":"Finland"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Hanken School of Economics","sameAs":"https://en.wikipedia.org/wiki/Hanken_School_of_Economics"}
+</script>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Bio
 
-```{r}
-1 + 1
-```
+I am a dedicated PhD Candidate in Finance at GSF—The Graduate School of Finance, affiliated with Hanken School of Economics. With a solid academic background and a passion for research, my focus lies in the intricate dynamics of Household Finance and the behaviors of credit markets, alongside an interest in Urban Economics. My research benefits hugely from the machine learning background I developed during my previous career.
+
+## Key research interests
+
+- Household Finance
+- Consumer Finance
+- Behavioral Finance
+- Urban Economics
+
+## Teaching
+
+*Thesis supervisor for 30 M.Sc. and B.Sc. students (2021-2024)*
+
+-	Chairman for 42 B.Sc. Seminars
+-	Grading +100 referee reports and seminar presentations
+
+*Mentee in Hanken’s Teacher Mentor Program, Pilot group (2022)*
+
+## Board Memberships
+
+*Board Member, Ekonomföreningen Niord rf, 2022-*
+
+- Member of the Asset Management Committee
+- Member of the Strategy Committee
+
+*Board Member, 2012-2023*
+
+- Served on the board of +5 start-ups and in several special committees.
+
+
+
+## Personal life
+
+Characterized by a relentless drive, hard work ethic, and a penchant for innovation, I
+bring a unique blend of experience and skills to my academic pursuits. Before pursuing
+my PhD, I honed my analytical abilities as a Data Scientist, became proficient in Python,
+and gained entrepreneurial experience.
+
+Outside academia, I’m family-centric and maintain a balanced lifestyle, enjoying
+activities like CrossFit and endurance sports. I am preparing for my first Ultra-cycling
+race this summer and have competed in a few ultra-trail running races.
