@@ -1,5 +1,6 @@
 ---
 title: "Alex Günsberg"
+image: Alex_Gunsberg_web.jpg
 about:
     template: trestles
     links:
@@ -15,8 +16,6 @@ about:
           text: DataCamp
           url: https://datacamp.com/profile/alexgunsberg
 
-image: Alex_Gunsberg_web.jpg
-comments: false
 ---
 
 ## Bio
