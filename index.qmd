@@ -6,8 +6,6 @@ about:
         - icon: linkedin
           text: LinkedIn
           url: https://www.linkedin.com/in/gunsberg/
-        - icon: twitter-x
-          url: https://x.com/alex_gunsberg
         - icon: github
           text: Github
           url: https://github.com/alexgunsberg
