@@ -8,8 +8,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-  page-footer:
-    left: "(c) Alex Günsberg, 2024–. [Disclaimer](/disclaimer)"
   twitter-card: true
   open-graph: true
   google-analytics: "G-M8E138WQ26"
