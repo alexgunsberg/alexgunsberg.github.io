@@ -24,5 +24,6 @@ format:
     toc_highlight: true
     fig-align: center
 
-     
+resources:
+  - CNAME 
 
