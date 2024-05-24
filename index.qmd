@@ -15,7 +15,7 @@ about:
           text: DataCamp
           url: https://datacamp.com/profile/alexgunsberg
 
-image: img/Alex_Gunsberg_web.jpg
+image: Alex_Gunsberg_web.jpg
 comments: false
 ---
 
