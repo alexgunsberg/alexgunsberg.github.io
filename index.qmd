@@ -1,5 +1,6 @@
 ---
 title: "Alex Günsberg"
+resources: img/
 about:
     template: trestles
     links:
