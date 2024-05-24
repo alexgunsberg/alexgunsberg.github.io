@@ -8,13 +8,26 @@ website:
     left:
       - href: index.qmd
         text: Home
+  page-footer:
+    left: "(c) Alex Günsberg, 2024–. [Disclaimer](disclaimer)"
+  twitter-card: true
+  open-graph: true
+  google-analytics: "G-M8E138WQ26"
 
 
 format:
   html:
-    theme: sandstone
-    css: styles.css
+    theme:
+      - cosmo
+      - custom.scss
     toc: true
-
+    toc_depth: 3
+    toc_float: true
+    toc_smooth_scroll: true
+    toc_highlight: true
+    fig-align: center
+    include-in-header:
+      text: |
+        <script type='application/ld+json'>{"@context":"http://www.schema.org","@type":"person","name":"Alex Günsberg","jobTitle":"Doctoral Researcher","description":"Alex is a passionate and driven PhD Candidate working in the intersection of Household, Consumer and Beharioral Finance.","url":"https://alexgunsberg.com","image":"BrandPhoto_Niord_PREMIUM_0013_Alex_Gunsberg_web.jpg","address":{"@type":"PostalAddress","addressLocality":"Helsinki","addressCountry":"Finland"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Hanken School of Economics","sameAs":"https://en.wikipedia.org/wiki/Hanken_School_of_Economics"}</script>
 
 

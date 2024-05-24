@@ -15,7 +15,7 @@ about:
           text: DataCamp
           url: https://datacamp.com/profile/alexgunsberg
 
-image: BrandPhoto_Niord_PREMIUM_0013_Alex_Gunsberg_web.jpg
+image: img/BrandPhoto_Niord_PREMIUM_0013_Alex_Gunsberg_web.jpg
 comments: false
 ---
 
