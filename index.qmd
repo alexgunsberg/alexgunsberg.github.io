@@ -1,6 +1,6 @@
 ---
 title: "Alex Günsberg"
-image: Alex_Gunsberg_web.jpg
+image: Alex_Gunsberg_web_half.jpg
 about:
     template: trestles
     links:
