@@ -18,9 +18,11 @@ about:
 
 ---
 
-## Bio
+## About
 
-I am a dedicated PhD Candidate in Finance at GSF—The Graduate School of Finance, affiliated with Hanken School of Economics. With a solid academic background and a passion for research, my focus lies in the intricate dynamics of Household Finance and the behaviors of credit markets, alongside an interest in Urban Economics. My research benefits hugely from the machine learning background I developed during my previous career.
+I am a PhD Candidate in Finance at GSF—The Graduate School of Finance, affiliated with Hanken School of Economics. My research focuses on Household Finance, Behavioral Finance, and Urban Economics, with clear influences from my machine learning background.
+
+Over the past decade, I co-founded and worked with startups, which helped me develop a mindset of getting things done, resilience, and a good understanding of people and what drives them. Additionally, my roles as a Senior Sales Manager at a CTA hedge fund and as a Data Scientist at a Nasdaq-listed semiconductor company provided me with experience in financial strategy, market analysis, and programming skills in Python, as well as basic skills in R and SQL.
 
 ## Key research interests
 
