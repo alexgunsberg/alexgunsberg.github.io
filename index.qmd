@@ -10,11 +10,11 @@ about:
         - icon: github
           text: Github
           url: https://github.com/alexgunsberg
-        - icon: envelope
-          url: mailto:gunsberg.rickety052@passmail.net
         - icon: graph-up-arrow
           text: DataCamp
           url: https://datacamp.com/profile/alexgunsberg
+        - icon: envelope
+          url: mailto:gunsberg.rickety052@passmail.net
 
 ---
 
