@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Alex Günsberg"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  twitter-card: true
+  open-graph: true
+  google-analytics: "G-M8E138WQ26"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    toc_smooth_scroll: true
+    toc_highlight: true
+    fig-align: center
+
+resources:
+  - CNAME 
+
