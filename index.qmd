@@ -14,7 +14,7 @@ about:
           text: DataCamp
           url: https://datacamp.com/profile/alexgunsberg
         #- icon: envelope
-          #url: mailto:gunsberg.rickety052@passmail.net
+          #url: mailto:passmail.net
         #- text: "{{< ai orcid >}} ORCID 0000-0002-2854-7628"
           #url: https://orcid.org/0000-0002-2854-7628
         #- text: "{{< ai google-scholar >}} Google Scholar"
