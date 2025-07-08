@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - Academic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            @apply text-2xl font-bold text-slate-800 mb-6 border-b-2 border-slate-200 pb-3;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-300;
+        }
+        .sidebar-card {
+             @apply bg-white border border-slate-200 rounded-xl;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- Main Container -->
+<div class="container mx-auto max-w-4xl p-4 sm:p-6 md:p-8">
+
+    <!-- Header / About Section -->
+    <header class="mb-16">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0">
+                <img src="{{ image_url }}" alt="Portrait of {{ name }}" class="rounded-full w-full h-full object-cover shadow-2xl">
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900">{{ name }}</h1>
+                <p class="text-xl text-slate-600 mt-2">{{ headline }}</p>
+                <p class="mt-4 text-lg leading-relaxed">
+                    {{ about_me }}
+                </p>
+                <div class="mt-6 flex justify-center md:justify-start space-x-2">
+                    {% for link in links %}
+                    <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="{{ link.svg_path }}"></path>
+                        </svg>
+                        <span class="sr-only">{{ link.text }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Left Column -->
+        <div class="md:col-span-2 space-y-12">
+
+            <!-- Research Section -->
+            <section id="research">
+                <h2 class="section-title">Research</h2>
+                <div class="space-y-8">
+                    {% for paper in publications %}
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold text-slate-900">{{ paper.title }}</h3>
+                        <p class="text-slate-500 mt-2 text-md">{{ paper.authors }}</p>
+                        <p class="mt-3 italic text-slate-600">{{ paper.journal }}</p>
+                        {% if paper.url != "#" %}
+                        <div class="mt-4">
+                            <a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-1 px-4 rounded-full text-sm transition-colors duration-300">
+                                View Publication &rarr;
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Teaching Section -->
+            <section id="teaching">
+                <h2 class="section-title">Teaching Experience</h2>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    {% for item in teaching %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <aside class="space-y-8">
+            <div class="sidebar-card p-6">
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Research Interests</h3>
+                <ul class="space-y-2">
+                    {% for interest in research_interests %}
+                    <li class="flex items-center">
+                        <span class="text-blue-500 mr-3">&#10003;</span>
+                        <span>{{ interest }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="sidebar-card p-6">
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Industry Experience</h3>
+                <ul class="space-y-4">
+                    {% for exp in industry_experience %}
+                    <li>
+                        <strong class="text-slate-900 font-semibold">{{ exp.role }}</strong><br>
+                        <span class="text-slate-500">{{ exp.organization }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center mt-16 pt-8 border-t border-slate-200">
+        <p class="text-slate-500">&copy; {{ current_year }} {{ name }}. Generated with Python.</p>
+    </footer>
+</div>
+</body>
+</html>
