@@ -9,7 +9,7 @@ WEBSITE_DATA = {
     "name": "Alex Günsberg",
     "headline": "PhD Candidate in Finance | Visiting Scholar at UNC Kenan-Flagler",
     "image_url": "Alex_Gunsberg_web_half.jpg",
-    "about_me": "I am a PhD Candidate in Finance at the Graduate School of Finance (GSF), affiliated with the Hanken School of Economics, and a visiting scholar at the UNC Kenan-Flagler Business School. My research at the intersection of Household Finance, Behavioral Finance, and Urban Economics is informed by over a decade of industry experience. I have analyzed systematic strategies as a Senior Sales Manager at a CTA hedge fund and honed my quantitative skills as a Data Scientist and entrepreneur. This background provides me with a unique, practice-oriented perspective on financial markets and data-driven research.",
+    "about_me": "I am a PhD Candidate in Finance at the Graduate School of Finance (GSF), affiliated with the Hanken School of Economics, and a visiting scholar at the UNC Kenan-Flagler Business School. My research interests lie at the intersection of Household Finance, Behavioral Finance, and Urban Economics. In my work, I heavily utilize machine learning and Python-based data engineering skills, drawing on over a decade of industry experience. This includes exposure to systematic strategies as a Senior Sales Manager at a CTA hedge fund and honing my quantitative skills as a Data Scientist and entrepreneur. This background provides me with a unique, practice-oriented perspective on financial markets and data-driven research.",
     "links": [
         {
             "text": "LinkedIn",
@@ -31,13 +31,12 @@ WEBSITE_DATA = {
         "Household Finance",
         "Behavioral Finance",
         "Urban Economics",
-        "Machine Learning"
     ],
     "publications": [
         {
             "title": "Job Market Paper (Title TBD)",
             "authors": "Alex Günsberg",
-            "journal": "In preparation. Available upon request.",
+            "journal": "#",
             "url": "#"
         },
         {
@@ -49,7 +48,7 @@ WEBSITE_DATA = {
         {
             "title": "[Project Title TBD]",
             "authors": "with Camelia M. Kuhnen and Yunzhi Hu",
-            "journal": "Working Paper. Available upon request.",
+            "journal": "#",
             "url": "#"
         }
     ],
