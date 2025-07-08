@@ -6,7 +6,7 @@ import os # Import the os module for debugging
 # --- Step 1: Your Information ---
 # This dictionary holds all the content for your website.
 WEBSITE_DATA = {
-    "name": "Alex Günsberg",
+    "name": "Alex Günsberg (Guensberg)",
     "headline": "PhD Candidate in Finance | Visiting Scholar at UNC Kenan-Flagler",
     "image_url": "Alex_Gunsberg_web_half.jpg",
     "about_me": "I am a PhD Candidate in Finance at the Graduate School of Finance (GSF), affiliated with the Hanken School of Economics, and a visiting scholar at the UNC Kenan-Flagler Business School. My research interests lie at the intersection of Household Finance, Behavioral Finance, and Urban Economics. In my work, I heavily utilize machine learning and Python-based data engineering skills, drawing on over a decade of industry experience. This includes exposure to systematic strategies as a Senior Sales Manager at a CTA hedge fund and honing my quantitative skills as a Data Scientist and entrepreneur. This background provides me with a unique, practice-oriented perspective on financial markets and data-driven research.",
@@ -30,13 +30,13 @@ WEBSITE_DATA = {
     "research_interests": [
         "Household Finance",
         "Behavioral Finance",
-        "Urban Economics",
+        "Urban Economics"
     ],
     "publications": [
         {
             "title": "Job Market Paper (Title TBD)",
             "authors": "Alex Günsberg",
-            "journal": "#",
+            "journal": "", # This line is now hidden
             "url": "#"
         },
         {
@@ -46,9 +46,9 @@ WEBSITE_DATA = {
             "url": "#"
         },
         {
-            "title": "[Project Title TBD]",
+            "title": "(Title TBD)",
             "authors": "with Camelia M. Kuhnen and Yunzhi Hu",
-            "journal": "#",
+            "journal": "", # This line is now hidden
             "url": "#"
         }
     ],
