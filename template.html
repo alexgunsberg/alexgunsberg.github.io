@@ -35,9 +35,11 @@
                 <img src="{{ image_url }}" alt="Portrait of {{ name }}" class="rounded-full w-full h-full object-cover shadow-2xl">
             </div>
             <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-900">{{ name }}</h1>
+                <!-- UPDATED FONT SIZES FOR NAME -->
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900">{{ name }}</h1>
                 <p class="text-xl text-slate-600 mt-2">{{ headline }}</p>
-                <p class="mt-4 text-lg leading-relaxed">
+                <!-- UPDATED FONT SIZE FOR BIO -->
+                <p class="mt-4 text-base leading-relaxed">
                     {{ about_me }}
                 </p>
                 <div class="mt-6 flex justify-center md:justify-start space-x-2">
@@ -68,7 +70,9 @@
                     <div class="card p-8">
                         <h3 class="text-xl font-bold text-slate-900">{{ paper.title }}</h3>
                         <p class="text-slate-500 mt-2 text-md">{{ paper.authors }}</p>
+                        {% if paper.journal and paper.journal.strip() %}
                         <p class="mt-3 italic text-slate-600">{{ paper.journal }}</p>
+                        {% endif %}
                         {% if paper.url != "#" %}
                         <div class="mt-4">
                             <a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-1 px-4 rounded-full text-sm transition-colors duration-300">
