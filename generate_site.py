@@ -8,7 +8,7 @@ import os # Import the os module for debugging
 WEBSITE_DATA = {
     "name": "Alex Günsberg",
     "headline": "PhD Candidate in Finance | Visiting Scholar at UNC Kenan-Flagler",
-    "image_url": "Alex_Gunsberg_half.jpg",
+    "image_url": "Alex_Gunsberg_web_half.jpg",
     "about_me": "I am a PhD Candidate in Finance at the Graduate School of Finance (GSF), affiliated with the Hanken School of Economics, and a visiting scholar at the UNC Kenan-Flagler Business School. My research at the intersection of Household Finance, Behavioral Finance, and Urban Economics is informed by over a decade of industry experience. I have analyzed systematic strategies as a Senior Sales Manager at a CTA hedge fund and honed my quantitative skills as a Data Scientist and entrepreneur. This background provides me with a unique, practice-oriented perspective on financial markets and data-driven research.",
     "links": [
         {
@@ -37,7 +37,7 @@ WEBSITE_DATA = {
         {
             "title": "Job Market Paper (Title TBD)",
             "authors": "Alex Günsberg",
-            "journal": "In preparation.",
+            "journal": "In preparation. Available upon request.",
             "url": "#"
         },
         {
@@ -49,7 +49,7 @@ WEBSITE_DATA = {
         {
             "title": "[Project Title TBD]",
             "authors": "with Camelia M. Kuhnen and Yunzhi Hu",
-            "journal": "Working Paper.",
+            "journal": "Working Paper. Available upon request.",
             "url": "#"
         }
     ],
