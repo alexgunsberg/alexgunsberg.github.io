@@ -13,47 +13,50 @@
             font-family: 'Inter', sans-serif;
         }
         .section-title {
-            @apply text-2xl font-bold text-gray-800 mb-6 border-b-2 border-gray-200 pb-2;
+            @apply text-2xl font-bold text-slate-800 mb-6 border-b-2 border-slate-200 pb-3;
         }
         .card {
-            @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300;
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-300;
+        }
+        .sidebar-card {
+             @apply bg-white border border-slate-200 rounded-xl;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-700">
+<body class="bg-slate-50 text-slate-700">
 
 <!-- Main Container -->
 <div class="container mx-auto max-w-4xl p-4 sm:p-6 md:p-8">
 
     <!-- Header / About Section -->
-    <header class="mb-12">
+    <header class="mb-16">
         <div class="flex flex-col md:flex-row items-center gap-8">
             <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0">
-                <img src="Alex_Gunsberg_web_half.jpg" alt="Portrait of Alex Günsberg" class="rounded-full w-full h-full object-cover shadow-lg">
+                <img src="Alex_Gunsberg_half.jpg" alt="Portrait of Alex Günsberg" class="rounded-full w-full h-full object-cover shadow-2xl">
             </div>
             <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Alex Günsberg</h1>
-                <p class="text-xl text-gray-600 mt-2">PhD Candidate in Finance, Hanken School of Economics</p>
-                <p class="mt-4 text-lg">
-                    I am a PhD Candidate in Finance at GSF—The Graduate School of Finance, Hanken School of Economics visiting UNC Kenan-Flagler Business School. My research focuses on Household Finance, Behavioral Finance, and Urban Economics, with influences from my machine learning background. Characterized by a relentless drive, hard work ethic, and a penchant for innovation, I bring a unique blend of experience and skills to my academic pursuits. Before pursuing my PhD, I honed my analytical abilities as a Data Scientist, became proficient in Python, and gained entrepreneurial experience. Outside academia, I’m family-centric and maintain a balanced lifestyle, enjoying activities like CrossFit and endurance sports.
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Alex Günsberg</h1>
+                <p class="text-xl text-slate-600 mt-2">PhD Candidate in Finance | Visiting Scholar at UNC Kenan-Flagler</p>
+                <p class="mt-4 text-lg leading-relaxed">
+                    I am a PhD Candidate in Finance at the Graduate School of Finance (GSF), affiliated with the Hanken School of Economics, and a visiting scholar at the UNC Kenan-Flagler Business School. My research at the intersection of Household Finance, Behavioral Finance, and Urban Economics is informed by over a decade of industry experience. I have analyzed systematic strategies as a Senior Sales Manager at a CTA hedge fund and honed my quantitative skills as a Data Scientist and entrepreneur. This background provides me with a unique, practice-oriented perspective on financial markets and data-driven research.
                 </p>
-                <div class="mt-6 flex justify-center md:justify-start space-x-4">
+                <div class="mt-6 flex justify-center md:justify-start space-x-2">
                     
-                    <a href="https://www.linkedin.com/in/gunsberg/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">
+                    <a href="https://www.linkedin.com/in/gunsberg/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
                         </svg>
                         <span class="sr-only">LinkedIn</span>
                     </a>
                     
-                    <a href="https://github.com/alexgunsberg" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">
+                    <a href="https://github.com/alexgunsberg" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
                         </svg>
                         <span class="sr-only">Github</span>
                     </a>
                     
-                    <a href="https://datacamp.com/profile/alexgunsberg" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">
+                    <a href="https://datacamp.com/profile/alexgunsberg" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M3.5 18.5v-13l17 6.5-17 6.5zm1.5-11.338v8.676l11.056-4.338-11.056-4.338z"></path>
                         </svg>
@@ -74,17 +77,27 @@
             <!-- Research Section -->
             <section id="research">
                 <h2 class="section-title">Research</h2>
-                <div class="space-y-6">
+                <div class="space-y-8">
                     
-                    <div class="card p-6">
-                        <h3 class="text-xl font-bold text-gray-900">Learning How To Borrow in a Fintech World</h3>
-                        <p class="text-gray-600 mt-1">Alex Günsberg, Camelia M. Kuhnen</p>
-                        <p class="mt-2 italic"></p>
-                        <div class="mt-4">
-                            <a href="" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-semibold">
-                                View Publication &rarr;
-                            </a>
-                        </div>
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold text-slate-900">Job Market Paper (Title TBD)</h3>
+                        <p class="text-slate-500 mt-2 text-md">Alex Günsberg</p>
+                        <p class="mt-3 italic text-slate-600">In preparation. Available upon request.</p>
+                        
+                    </div>
+                    
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold text-slate-900">Learning How to Borrow in a Fintech World</h3>
+                        <p class="text-slate-500 mt-2 text-md">with Camelia M. Kuhnen</p>
+                        <p class="mt-3 italic text-slate-600">Working Paper. Presented at: Federal Reserve Bank of Philadelphia, University of South Carolina, HEC Montreal, Erasmus Rotterdam, FDIC, and University of Michigan (2024).</p>
+                        
+                    </div>
+                    
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold text-slate-900">[Project Title TBD]</h3>
+                        <p class="text-slate-500 mt-2 text-md">with Camelia M. Kuhnen and Yunzhi Hu</p>
+                        <p class="mt-3 italic text-slate-600">In preparation. Available upon request.</p>
+                        
                     </div>
                     
                 </div>
@@ -109,34 +122,45 @@
 
         <!-- Right Column -->
         <aside class="space-y-8">
-            <div class="card p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Research Interests</h3>
+            <div class="sidebar-card p-6">
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Research Interests</h3>
                 <ul class="space-y-2">
                     
                     <li class="flex items-center">
-                        <span class="text-blue-500 mr-2">&check;</span>
+                        <span class="text-blue-500 mr-3">&#10003;</span>
                         <span>Household Finance</span>
                     </li>
                     
                     <li class="flex items-center">
-                        <span class="text-blue-500 mr-2">&check;</span>
+                        <span class="text-blue-500 mr-3">&#10003;</span>
                         <span>Behavioral Finance</span>
                     </li>
                     
                     <li class="flex items-center">
-                        <span class="text-blue-500 mr-2">&check;</span>
+                        <span class="text-blue-500 mr-3">&#10003;</span>
                         <span>Urban Economics</span>
                     </li>
                     
                 </ul>
             </div>
-            <div class="card p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Affiliations & Non-profit</h3>
-                <ul class="space-y-2">
+            <div class="sidebar-card p-6">
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Industry Experience</h3>
+                <ul class="space-y-4">
                     
-                    <li><strong>Board Member</strong>, Ekonomföreningen Niord rf, 2022-2024</li>
+                    <li>
+                        <strong class="text-slate-900 font-semibold">Senior Sales Manager</strong><br>
+                        <span class="text-slate-500">Estlander & Partners (CTA Hedge Fund)</span>
+                    </li>
                     
-                    <li><strong>Board Member</strong>, Served on the board of +5 start-ups, 2012-2023</li>
+                    <li>
+                        <strong class="text-slate-900 font-semibold">Data Scientist</strong><br>
+                        <span class="text-slate-500">Silicon Labs (formerly Nasdaq listed)</span>
+                    </li>
+                    
+                    <li>
+                        <strong class="text-slate-900 font-semibold">Co-Founder & Board Member</strong><br>
+                        <span class="text-slate-500">Multiple Startups, 2012-2023</span>
+                    </li>
                     
                 </ul>
             </div>
@@ -144,8 +168,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="text-center mt-12 pt-6 border-t border-gray-200">
-        <p>&copy; 2025 Alex Günsberg. Generated with Python.</p>
+    <footer class="text-center mt-16 pt-8 border-t border-slate-200">
+        <p class="text-slate-500">&copy; 2025 Alex Günsberg. Generated with Python.</p>
     </footer>
 </div>
 </body>
