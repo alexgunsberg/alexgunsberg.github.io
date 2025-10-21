@@ -34,7 +34,7 @@ WEBSITE_DATA = {
     ],
     "publications": [
         {
-            "title": "Job Market Paper (Title TBD)",
+            "title": "(Job Market Paper) Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending",
             "authors": "Alex Günsberg",
             "journal": "", # This line is now hidden
             "url": "#"
