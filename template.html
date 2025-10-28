@@ -3,130 +3,553 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ name }} - Academic Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="{{ name }} - PhD Candidate in Finance specializing in Household Finance, Behavioral Finance, and Machine Learning">
+    <title>{{ name }} - Finance PhD Candidate</title>
+
     <style>
+        /* === RESET & BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            color: #333;
+            background: #fff;
         }
-        .section-title {
-            @apply text-2xl font-bold text-slate-800 mb-6 border-b-2 border-slate-200 pb-3;
+
+        /* === HEADER === */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        .card {
-            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-300;
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            display: block;
         }
-        .sidebar-card {
-             @apply bg-white border border-slate-200 rounded-xl;
+
+        h1 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .headline {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        /* === LINKS === */
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .links a {
+            color: #0066CC;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .links a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
+
+        /* === SECTIONS === */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #333;
+            margin-top: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #0066CC;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #0066CC;
+        }
+
+        /* === EDUCATION SECTION === */
+        .education-item {
+            margin-bottom: 2em;
+        }
+
+        .degree {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 0.5em;
+        }
+
+        .program {
+            font-size: 1em;
+            margin-bottom: 0.25em;
+        }
+
+        .program a {
+            color: #0066CC;
+            text-decoration: none;
+        }
+
+        .program a:hover {
+            text-decoration: underline;
+        }
+
+        .institution {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 0.25em;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 1em;
+        }
+
+        .program-description {
+            background: #f8f9fa;
+            padding: 1em;
+            border-left: 3px solid #0066CC;
+            margin: 1em 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .supervisors {
+            margin-top: 1em;
+        }
+
+        .supervisors ul {
+            margin: 0.5em 0 0 1.5em;
+        }
+
+        .supervisors li {
+            margin-bottom: 0.25em;
+            font-size: 0.95em;
+        }
+
+        /* Visiting position */
+        .visiting-position {
+            margin-top: 2em;
+            padding: 1em;
+            background: #f0f8ff;
+            border-left: 3px solid #0066CC;
+        }
+
+        .visiting-position h3 {
+            font-size: 1em;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .visiting-position .meta {
+            font-style: italic;
+            margin: 0.25em 0;
+        }
+
+        .visiting-position .host {
+            margin-top: 0.5em;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Networks */
+        .networks {
+            margin-top: 2em;
+            padding-top: 1.5em;
+            border-top: 1px solid #eee;
+        }
+
+        .networks h3 {
+            font-size: 1em;
+            margin-bottom: 1em;
+            margin-top: 0;
+        }
+
+        .network-item {
+            margin-bottom: 1em;
+        }
+
+        .network-item a {
+            font-weight: 600;
+            color: #0066CC;
+        }
+
+        .network-item p {
+            margin: 0.5em 0 0 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* === INDUSTRY EXPERIENCE === */
+        .experience-item {
+            margin-bottom: 1.5em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .role {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #1a1a1a;
+        }
+
+        .organization {
+            color: #555;
+            font-size: 0.95em;
+            margin: 0.25em 0;
+        }
+
+        .description {
+            color: #444;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-top: 0.5em;
+        }
+
+        /* === TECHNICAL SKILLS === */
+        .skill-category {
+            margin-bottom: 1.5em;
+        }
+
+        .skill-category h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 0.5em;
+            text-transform: capitalize;
+            margin-top: 0;
+        }
+
+        .skill-description {
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+        }
+
+        .skill-tag {
+            background: #f5f5f5;
+            padding: 0.35em 0.75em;
+            border-radius: 3px;
+            font-size: 0.85em;
+            color: #555;
+            border: 1px solid #ddd;
+        }
+
+        /* === RESEARCH DISSEMINATION === */
+        .dissemination-note {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+        }
+
+        /* === PUBLICATIONS === */
+        .publication {
+            margin-bottom: 1.5em;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 0.25em;
+        }
+
+        .publication-authors {
+            font-style: italic;
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 0.25em;
+        }
+
+        .publication-journal {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* === FOOTER === */
+        footer {
+            margin-top: 3em;
+            padding-top: 2em;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #0066CC;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.75em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .skill-tags {
+                gap: 0.35em;
+            }
+
+            .skill-tag {
+                padding: 0.25em 0.5em;
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-700">
+<body>
+<!-- HEADER -->
+<div class="header">
+    <img src="{{ image_url }}" alt="{{ name }}" class="profile-image" loading="lazy">
+    <h1>{{ name }}</h1>
+    <p class="headline">{{ headline }}</p>
 
-<!-- Main Container -->
-<div class="container mx-auto max-w-4xl p-4 sm:p-6 md:p-8">
-
-    <!-- Header / About Section -->
-    <header class="mb-16">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-            <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0">
-                <img src="{{ image_url }}" alt="Portrait of {{ name }}" class="rounded-full w-full h-full object-cover shadow-2xl">
-            </div>
-            <div class="text-center md:text-left">
-                <!-- UPDATED FONT SIZES FOR NAME -->
-                <h1 class="text-3xl md:text-4xl font-bold text-slate-900">{{ name }}</h1>
-                <p class="text-xl text-slate-600 mt-2">{{ headline }}</p>
-                <!-- UPDATED FONT SIZE FOR BIO -->
-                <p class="mt-4 text-base leading-relaxed">
-                    {{ about_me }}
-                </p>
-                <div class="mt-6 flex justify-center md:justify-start space-x-2">
-                    {% for link in links %}
-                    <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="{{ link.svg_path }}"></path>
-                        </svg>
-                        <span class="sr-only">{{ link.text }}</span>
-                    </a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content Grid -->
-    <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Left Column -->
-        <div class="md:col-span-2 space-y-12">
-
-            <!-- Research Section -->
-            <section id="research">
-                <h2 class="section-title">Research</h2>
-                <div class="space-y-8">
-                    {% for paper in publications %}
-                    <div class="card p-8">
-                        <h3 class="text-xl font-bold text-slate-900">{{ paper.title }}</h3>
-                        <p class="text-slate-500 mt-2 text-md">{{ paper.authors }}</p>
-                        {% if paper.journal and paper.journal.strip() %}
-                        <p class="mt-3 italic text-slate-600">{{ paper.journal }}</p>
-                        {% endif %}
-                        {% if paper.url != "#" %}
-                        <div class="mt-4">
-                            <a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-1 px-4 rounded-full text-sm transition-colors duration-300">
-                                View Publication &rarr;
-                            </a>
-                        </div>
-                        {% endif %}
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
-
-            <!-- Teaching Section -->
-            <section id="teaching">
-                <h2 class="section-title">Teaching Experience</h2>
-                <ul class="list-disc list-inside space-y-3 text-lg">
-                    {% for item in teaching %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
-        </div>
-
-        <!-- Right Column -->
-        <aside class="space-y-8">
-            <div class="sidebar-card p-6">
-                <h3 class="text-xl font-semibold text-slate-800 mb-4">Research Interests</h3>
-                <ul class="space-y-2">
-                    {% for interest in research_interests %}
-                    <li class="flex items-center">
-                        <span class="text-blue-500 mr-3">&#10003;</span>
-                        <span>{{ interest }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="sidebar-card p-6">
-                <h3 class="text-xl font-semibold text-slate-800 mb-4">Industry Experience</h3>
-                <ul class="space-y-4">
-                    {% for exp in industry_experience %}
-                    <li>
-                        <strong class="text-slate-900 font-semibold">{{ exp.role }}</strong><br>
-                        <span class="text-slate-500">{{ exp.organization }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </aside>
-    </main>
-
-    <!-- Footer -->
-    <footer class="text-center mt-16 pt-8 border-t border-slate-200">
-        <p class="text-slate-500">&copy; {{ current_year }} {{ name }}. Generated with Python.</p>
-    </footer>
+    <!-- LINKS -->
+    <div class="links">
+        {% for link in links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.text }}</a>
+        {% endfor %}
+    </div>
 </div>
+
+<!-- ABOUT -->
+<section class="about">
+    <h2>About</h2>
+    <p>{{ about_me }}</p>
+</section>
+
+<!-- EDUCATION -->
+<section class="education">
+    <h2>Education & Affiliations</h2>
+
+    <!-- PhD -->
+    <div class="education-item">
+        <div class="degree">{{ education.phd.degree }}</div>
+        <div class="program">
+            <a href="{{ education.phd.program_url }}" target="_blank" rel="noopener">
+                {{ education.phd.program }}
+            </a>
+        </div>
+        <div class="institution">{{ education.phd.institution }}</div>
+        <div class="meta">{{ education.phd.period }} | {{ education.phd.location }}</div>
+
+        <p class="program-description">{{ education.phd.description }}</p>
+
+        {% if education.phd.supervisors %}
+        <div class="supervisors">
+            <strong>Supervisors:</strong>
+            <ul>
+                {% for supervisor in education.phd.supervisors %}
+                <li>{{ supervisor }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Visiting Position -->
+    {% if education.visiting %}
+    <div class="visiting-position">
+        <h3>{{ education.visiting.position }}</h3>
+        <div class="institution">{{ education.visiting.institution }}</div>
+        <div class="meta">{{ education.visiting.period }} | {{ education.visiting.location }}</div>
+        {% if education.visiting.host %}
+        <div class="host"><strong>Host:</strong> {{ education.visiting.host }}</div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Networks -->
+    {% if education.networks %}
+    <div class="networks">
+        <h3>Research Networks</h3>
+        {% for network in education.networks %}
+        <div class="network-item">
+            <a href="{{ network.url }}" target="_blank" rel="noopener">{{ network.name }}</a>
+            <p>{{ network.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section class="interests">
+    <h2>Research Interests</h2>
+    <ul>
+        {% for interest in research_interests %}
+        <li>{{ interest }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="publications">
+    <h2>Publications</h2>
+    {% for pub in publications %}
+    <div class="publication">
+        <div class="publication-title">{{ pub.title }}</div>
+        <div class="publication-authors">{{ pub.authors }}</div>
+        {% if pub.journal %}<div class="publication-journal">{{ pub.journal }}</div>{% endif %}
+    </div>
+    {% endfor %}
+</section>
+
+<!-- RESEARCH DISSEMINATION -->
+<section class="dissemination">
+    <h2>Research Dissemination</h2>
+    <p class="dissemination-note">{{ research_dissemination.description }}</p>
+    <ul>
+        {% for venue in research_dissemination.venues %}
+        <li>{{ venue }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<!-- INDUSTRY EXPERIENCE -->
+<section class="industry">
+    <h2>Industry Experience</h2>
+    {% for exp in industry_experience %}
+    <div class="experience-item">
+        <div class="role">{{ exp.role }}</div>
+        <div class="organization">{{ exp.organization }}</div>
+        {% if exp.period %}<div class="meta">{{ exp.period }}</div>{% endif %}
+        <div class="description">{{ exp.description|safe }}</div>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- TECHNICAL SKILLS -->
+<section class="skills">
+    <h2>Technical Skills</h2>
+    {% for category, details in technical_skills.items() %}
+    <div class="skill-category">
+        <h3>{{ category|replace('_', ' ')|title }}</h3>
+        <p class="skill-description">{{ details.description }}</p>
+        <div class="skill-tags">
+            {% for tool in details.tools %}
+            <span class="skill-tag">{{ tool }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- TEACHING -->
+<section class="teaching">
+    <h2>Teaching</h2>
+    <ul>
+        {% for item in teaching %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<!-- AWARDS & GRANTS -->
+<section class="awards">
+    <h2>Awards & Grants</h2>
+    <p>{{ awards_and_grants }}</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Contact: <span id="email-contact"></span></p>
+    <script>
+        // Email obfuscation to prevent scraper bots
+        (function() {
+            const u = 'cv.fondness';
+            const d = 'gunsberg.org';
+            const email = u + '@' + d;
+            document.getElementById('email-contact').innerHTML =
+                '<a href="mailto:' + email + '">' + email + '</a>';
+        })();
+    </script>
+</footer>
 </body>
 </html>
