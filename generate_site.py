@@ -199,7 +199,7 @@ WEBSITE_DATA = {
             "role": "Entrepreneur & Technical Co-Founder",
             "organization": "Multiple startups",
             "period": "April 2010 – March 2020",
-            "description": "Over 10 years as tech entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi)."
+            "description": "Over 10 years as entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi)."
         },
         {
             "role": "Data Scientist",
