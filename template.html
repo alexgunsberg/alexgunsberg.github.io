@@ -3,424 +3,1111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ name }} - PhD Candidate in Finance specializing in Household Finance, Behavioral Finance, and Machine Learning">
+    <meta name="description" content="{{ name }} - PhD Candidate in Finance at Hanken School of Economics, specializing in Household Finance, Behavioral Finance, and Machine Learning">
+    <meta name="keywords" content="finance, phd, economics, machine learning, household finance, behavioral finance">
+    <meta name="author" content="{{ name }}">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="{{ name }} - Finance PhD Candidate">
+    <meta property="og:description" content="PhD Candidate in Finance at Finland's Graduate School of Finance">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexgunsberg.com">
+
     <title>{{ name }} - Finance PhD Candidate</title>
 
+    <!-- Favicon - Professional AG with gradient -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238B5CF6'/><stop offset='100%25' style='stop-color:%23EC4899'/></linearGradient></defs><rect width='100' height='100' fill='url(%23grad)' rx='20'/><text x='50' y='52' font-size='48' fill='white' text-anchor='middle' dy='.3em' font-family='Arial,sans-serif' font-weight='bold'>AG</text></svg>">
+
+    <!-- Google Fonts - Inter (modern, professional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* === RESET & BASE === */
+        /* ===== CSS CUSTOM PROPERTIES ===== */
         :root {
-            --text-primary: #1a1a1a; /* Darker text for better contrast */
-            --text-secondary: #555;
-            --accent-color: #0066CC; /* Standard blue, professional */
-            --bg-light: #f8f9fa; /* Very light gray for subtle backgrounds */
-            --border-color: #e0e0e0; /* Slightly softer border */
+            /* Light mode - clean with subtle accents */
+            --color-bg: #ffffff;
+            --color-bg-secondary: #f8f9fa;
+            --color-bg-tertiary: #f0f2f5;
+            --color-text-primary: #0f1419;
+            --color-text-secondary: #536471;
+            --color-text-tertiary: #8b98a5;
+            --color-accent: #1a8cd8;
+            --color-accent-hover: #1577b8;
+            --color-border: #e7e9ea;
+            --color-border-hover: #d1d5db;
+
+            /* Cyberpunk hover effects (Keychron colors) */
+            --cyber-purple: #8B5CF6;
+            --cyber-pink: #EC4899;
+            --cyber-cyan: #06B6D4;
+
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+
+            /* Border radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
         }
-        * {
+
+        /* Dark mode - cyberpunk aesthetic */
+        body.dark-mode {
+            --color-bg: #0F172A;
+            --color-bg-secondary: #1E293B;
+            --color-bg-tertiary: #334155;
+            --color-text-primary: #F1F5F9;
+            --color-text-secondary: #94A3B8;
+            --color-text-tertiary: #64748B;
+            --color-accent: #818CF8;
+            --color-accent-hover: #A78BFA;
+            --color-border: #334155;
+            --color-border-hover: #475569;
+
+            /* Enhanced glow in dark mode */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            line-height: 1.7; /* Increased slightly for readability */
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem; /* Increased top/bottom padding */
-            color: var(--text-primary);
-            background: #fff;
         }
 
-        /* === HEADER === */
-        .header {
-            text-align: center;
-            margin-bottom: 3.5rem; /* Increased margin */
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .profile-image {
-            width: 180px; /* Slightly smaller */
-            height: 180px;
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background: var(--color-bg);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* ===== DARK MODE TOGGLE ===== */
+        .dark-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, var(--cyber-purple), var(--cyber-pink));
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dark-toggle:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .dark-toggle svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-xl);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .header {
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .profile-image-small {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            border: 3px solid var(--border-color); /* Subtle border */
-        }
-        h1 {
-            font-size: 2.2em; /* Slightly larger */
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-        .headline {
-            color: var(--text-secondary);
-            font-size: 1.15em; /* Slightly larger */
-            margin-bottom: 2rem; /* Increased margin */
-            font-weight: 300; /* Lighter weight for headline */
+            border: 2px solid var(--color-border);
+            transition: all 0.3s ease;
         }
 
-        /* === LINKS (Icons Restored) === */
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem; /* Slightly reduced gap */
-            margin-bottom: 3rem; /* Increased margin */
-            align-items: center;
+        .profile-image-small:hover {
+            border-color: var(--cyber-purple);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
         }
-        .links a {
-            color: var(--accent-color);
+
+        .profile-info h1 {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.2;
+        }
+
+        .profile-info p {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-top: 2px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-link {
+            color: var(--color-text-secondary);
             text-decoration: none;
+            font-size: var(--font-size-sm);
             font-weight: 500;
             transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px; /* Add padding for better spacing */
-            border: 1px solid transparent; /* Prepare for hover border */
-            border-radius: 6px; /* Slightly rounded */
-        }
-        .links a svg {
-             width: 18px; /* Slightly smaller icons */
-             height: 18px;
-             fill: var(--text-secondary);
-             transition: fill 0.2s ease;
-         }
-        .links a:hover {
-            color: #004499;
-            text-decoration: none; /* No underline on hover */
-            background-color: var(--bg-light); /* Subtle background on hover */
-            border: 1px solid var(--border-color); /* Add border on hover */
-        }
-         .links a:hover svg {
-             fill: #004499;
-         }
-
-        /* === SECTIONS === */
-        section {
-            margin-bottom: 3rem; /* Consistent bottom margin */
-             padding: 2rem 0; /* Add top/bottom padding within sections */
-        }
-         /* Subtle alternating backgrounds */
-         section:nth-of-type(odd) {
-             background-color: var(--bg-light);
-             margin-left: -1.5rem; /* Extend background to edge */
-             margin-right: -1.5rem;
-             padding-left: 1.5rem;
-             padding-right: 1.5rem;
-             border-top: 1px solid var(--border-color); /* Add top border */
-             border-bottom: 1px solid var(--border-color); /* Add bottom border */
-         }
-         section:first-of-type { /* No top border/padding for first section */
-             border-top: none;
-             padding-top: 0;
-         }
-
-        h2 {
-            font-size: 1.6em; /* Slightly larger */
-            font-weight: 600;
-            margin-bottom: 1.5rem; /* Increased margin */
-            color: var(--text-primary);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.75rem; /* Increased padding */
-        }
-        h3 {
-            font-size: 1.15em;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary); /* Darker h3 */
-            margin-top: 1.5rem; /* Increased top margin */
-        }
-         section > h3:first-child { /* No top margin if h3 is first element */
-             margin-top: 0;
-         }
-        p {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        ul {
-            list-style-position: outside;
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        li {
-            margin-bottom: 0.6rem; /* Slightly increased spacing */
-        }
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        strong { /* For emphasized numbers */
-            font-weight: 600;
-            color: var(--accent-color);
+            padding: var(--spacing-sm) 0;
+            position: relative;
         }
 
-        /* === EDUCATION SECTION === */
-        .education-item {
-            margin-bottom: 1.5em;
-            padding-bottom: 1.5em;
-            border-bottom: 1px solid var(--border-color);
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cyber-purple), var(--cyber-pink));
+            transition: width 0.3s ease;
         }
-        .education-item:last-of-type {
-             border-bottom: none;
-             padding-bottom: 0;
-             margin-bottom: 0; /* Remove bottom margin for last item */
-         }
-        .degree {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-bottom: 0.25em;
-        }
-        .program a { font-weight: 500; } /* Make program name slightly bolder */
-        .institution { color: var(--text-secondary); font-size: 0.95em; margin-bottom: 0.25em; }
-        .meta { color: #777; font-size: 0.9em; font-style: italic; margin-bottom: 0.75em; }
-        .supervisors { margin-top: 1em; font-size: 0.95em; }
-        .supervisors ul { margin: 0.5em 0 0 1.5em; }
-        .supervisors li { margin-bottom: 0.25em; color: var(--text-secondary); }
-        .visiting-position {
-            margin-top: 1.5em;
-            padding: 1.25em; /* Increased padding */
-            background: #eaf6ff; /* Slightly different blue highlight */
-            border-left: 4px solid var(--accent-color);
-            border-radius: 4px;
-            padding-bottom: 1.5em;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .visiting-position h3 { font-size: 1.05em; margin-top: 0; margin-bottom: 0.5em; }
-        .visiting-position .host { margin-top: 0.75em; font-size: 0.9em; color: var(--text-secondary); }
-         .visiting-position .host strong { color: var(--text-secondary); font-weight: 500; } /* Less emphasis on "Host:" */
-        .networks { margin-top: 1.5em; padding-top: 1.5em; border-top: 1px solid var(--border-color); }
-        .networks h3 { font-size: 1.05em; margin-bottom: 1em; margin-top: 0; }
-        .network-item { margin-bottom: 1em; }
-        .network-item:last-child { margin-bottom: 0; }
-        .network-item a { font-weight: 600; }
-        .network-item p { margin: 0.25em 0 0 0; font-size: 0.9em; color: var(--text-secondary); }
 
-        /* === INDUSTRY EXPERIENCE === */
-        .experience-item {
-            margin-bottom: 1.5em;
-            padding-bottom: 1.5em;
-            border-bottom: 1px solid var(--border-color);
+        .nav-link:hover {
+            color: var(--cyber-purple);
         }
-        .experience-item:last-child { border-bottom: none; padding-bottom: 0; }
-        .role { font-weight: 600; font-size: 1.05em; color: var(--text-primary); }
-        .organization { color: var(--text-secondary); font-size: 0.95em; margin: 0.25em 0; }
-        .experience-item .meta { color: #777; font-size: 0.9em; font-style: italic; margin-bottom: 0.75em; }
-        .description { color: var(--text-primary); font-size: 1em; line-height: 1.7; margin-top: 0.5em; }
 
-        /* === TECHNICAL SKILLS === */
-        .skills-grid {
-             display: grid;
-             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted min width */
-             gap: 1rem; /* Slightly reduced gap */
-         }
-        .skill-category {
-            margin-bottom: 0;
-             padding: 1.25rem; /* Increased padding */
-             border: 1px solid var(--border-color);
-             border-radius: 6px; /* Increased rounding */
-             background: #fff; /* Ensure white background if section is shaded */
+        .nav-link:hover::after {
+            width: 100%;
         }
-        .skill-category h3 {
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 0.75rem; /* Increased margin */
-            text-transform: capitalize;
-            margin-top: 0;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.75rem; /* Increased padding */
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: var(--spacing-2xl) 0;
+            background: linear-gradient(to bottom, var(--color-bg-secondary), var(--color-bg));
         }
-        .skill-description { color: var(--text-secondary); font-size: 0.9em; margin-bottom: 1rem; }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6em; /* Increased gap */ }
-        .skill-tag {
-            background: #e9ecef; /* Slightly darker tag background */
-            padding: 5px 10px; /* Adjusted padding */
-            border-radius: 4px;
-            font-size: 0.8em; /* Slightly smaller tag text */
-            color: #495057; /* Darker tag text */
-            border: none; /* Removed border */
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .profile-image-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--color-bg);
+            box-shadow: var(--shadow-lg);
+            margin: 0 auto var(--spacing-lg);
+            transition: all 0.4s ease;
+        }
+
+        .profile-image-large:hover {
+            transform: scale(1.08);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--cyber-purple);
+        }
+
+        .hero-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-xl);
             font-weight: 500;
         }
 
-        /* === RESEARCH DISSEMINATION === */
-        .dissemination-note { font-style: italic; color: var(--text-secondary); font-size: 0.9em; margin-bottom: 0.75rem; }
-
-        /* === PUBLICATIONS / WORKING PAPERS === */
-        .publication { margin-bottom: 1.5em; }
-        .publication:last-child { margin-bottom: 0; }
-        .publication-title { font-weight: 600; margin-bottom: 0.25em; font-size: 1.05em; }
-        .publication-authors { font-style: italic; color: var(--text-secondary); font-size: 0.95em; margin-bottom: 0.25em; }
-        .publication-journal { color: #777; font-size: 0.9em; }
-
-        /* === FOOTER === */
-        footer {
-            margin-top: 3.5em; /* Increased margin */
-            padding-top: 2em;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
+        /* ===== SOCIAL LINKS - ENHANCED ===== */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
         }
-        footer p { color: #777; font-size: 0.9em; margin-bottom: 0.5em; }
-        footer p:last-child { margin-bottom: 0; }
-        footer a { color: var(--accent-color); font-weight: 500; }
 
-        /* === RESPONSIVE === */
-        @media (max-width: 600px) {
-            body { padding: 2rem 1rem; }
-            h1 { font-size: 1.8em; }
-            h2 { font-size: 1.4em; }
-            .profile-image { width: 150px; height: 150px; }
-            .links { gap: 0.75rem; } /* Reduce gap further on mobile */
-             .skills-grid { grid-template-columns: 1fr; gap: 1rem; }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            background: var(--color-bg-tertiary);
+            border-color: var(--cyber-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+        }
+
+        /* CV link special styling */
+        .social-link:first-child {
+            background: linear-gradient(135deg, var(--cyber-purple), var(--cyber-pink));
+            color: white;
+            border-color: transparent;
+            font-weight: 600;
+        }
+
+        .social-link:first-child:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .social-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .section-header {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .section-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .section-icon {
+            width: 28px;
+            height: 28px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .section-title:hover .section-icon {
+            opacity: 1;
+            transform: scale(1.1);
+            color: var(--cyber-purple);
+        }
+
+        /* ===== CARDS - ENHANCED ===== */
+        .card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: linear-gradient(180deg, var(--cyber-purple), var(--cyber-pink), var(--cyber-cyan));
+            transition: height 0.4s ease;
+        }
+
+        .card:hover::before {
+            height: 100%;
+        }
+
+        .card:hover {
+            border-color: var(--color-border-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .card-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.4;
+        }
+
+        .card-meta {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .card-description {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ===== BADGES - INTERACTIVE ===== */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--color-bg-tertiary);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .badge:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+            border-color: var(--cyber-purple);
+            color: var(--cyber-purple);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 8px rgba(139, 92, 246, 0.2);
+        }
+
+        .badge-accent {
+            background: rgba(26, 140, 216, 0.1);
+            color: var(--color-accent);
+            border-color: rgba(26, 140, 216, 0.3);
+        }
+
+        .badge-accent:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
+            border-color: var(--cyber-cyan);
+            color: var(--cyber-cyan);
+        }
+
+        /* ===== PUBLICATION LINKS ===== */
+        .pub-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--color-bg-tertiary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pub-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .pub-link:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+            border-color: var(--cyber-purple);
+            color: var(--cyber-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(139, 92, 246, 0.2);
+        }
+
+        /* Color variations for different link types */
+        .pdf-link:hover {
+            border-color: #DC2626;
+            color: #DC2626;
+            background: rgba(220, 38, 38, 0.1);
+        }
+
+        .code-link:hover {
+            border-color: var(--cyber-cyan);
+            color: var(--cyber-cyan);
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .slides-link:hover {
+            border-color: var(--cyber-pink);
+            color: var(--cyber-pink);
+            background: rgba(236, 72, 153, 0.1);
+        }
+
+        .bibtex-link:hover {
+            border-color: var(--cyber-purple);
+            color: var(--cyber-purple);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        /* BibTeX Container */
+        .bibtex-container {
+            background: var(--color-bg-tertiary);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .bibtex-box {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-md);
+            overflow-x: auto;
+            font-size: var(--font-size-xs);
+            line-height: 1.4;
+            margin: 0 0 var(--spacing-sm) 0;
+            color: var(--color-text-secondary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .copy-bibtex {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--cyber-purple);
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-bibtex:hover {
+            background: var(--cyber-pink);
+            transform: translateY(-1px);
+        }
+
+        /* ===== LISTS ===== */
+        .custom-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .custom-list li {
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .custom-list li:hover {
+            padding-left: var(--spacing-sm);
+            color: var(--color-text-primary);
+        }
+
+        .custom-list li:last-child {
+            border-bottom: none;
+        }
+
+        .custom-list li::before {
+            content: "▸";
+            color: var(--cyber-purple);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+            margin-left: -1.5em;
+            transition: all 0.2s ease;
+        }
+
+        .custom-list li:hover::before {
+            color: var(--cyber-pink);
+            transform: translateX(3px);
+        }
+
+        /* ===== GRID ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        /* ===== LINKS ===== */
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: var(--cyber-purple);
+        }
+
+        /* ===== EMPHASIS ===== */
+        strong {
+            color: var(--cyber-purple);
+            font-weight: 700;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 1px solid var(--color-border);
+            padding: var(--spacing-2xl) 0;
+            margin-top: var(--spacing-2xl);
+            background: var(--color-bg-secondary);
+        }
+
+        .footer-content {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-link {
+                justify-content: center;
+            }
+
+            .dark-toggle {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
+<!-- DARK MODE TOGGLE -->
+<button class="dark-toggle" onclick="toggleDarkMode()">
+    <svg class="toggle-icon moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <svg class="toggle-icon sun" viewBox="0 0 24 24" style="display: none;">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <span class="toggle-text">Light</span>
+</button>
+
+<!-- HEADER -->
 <header class="header">
-    <img src="{{ image_url }}" alt="{{ name }}" class="profile-image" loading="lazy">
-    <h1>{{ name }}</h1>
-    <p class="headline">{{ headline }}</p>
-
-    <nav class="links">
-        {% for link in links %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" title="{{ link.text }}"> {# Added title attribute #}
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="{{ link.svg_path }}"></path></svg>
-            <span>{{ link.text }}</span>
-        </a>
-        {% endfor %}
-    </nav>
-</header>
-
-<section class="about">
-    <h2>About</h2>
-    <p>{{ about_me }}</p>
-</section>
-
-<section class="education">
-    <h2>Education & Affiliations</h2>
-
-    <div class="education-item phd">
-        <div class="degree">{{ education.phd.degree }}</div>
-        <div class="program">
-            <a href="{{ education.phd.program_url }}" target="_blank" rel="noopener">
-                {{ education.phd.program }}
-            </a>
-        </div>
-        <div class="institution">{{ education.phd.institution }}</div>
-        <div class="meta">{{ education.phd.period }} | {{ education.phd.location }}</div>
-
-        {% if education.phd.supervisors %}
-        <div class="supervisors">
-            <strong>Supervisors:</strong>
-            <ul>
-                {% for supervisor in education.phd.supervisors %}
-                <li>{{ supervisor }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-    </div>
-
-    {% if education.visiting %}
-    <div class="education-item visiting-position">
-        <h3>{{ education.visiting.position }}</h3>
-        <div class="institution">{{ education.visiting.institution }}</div>
-        <div class="meta">{{ education.visiting.period }} | {{ education.visiting.location }}</div>
-        {% if education.visiting.host %}
-        <div class="host">Host: {{ education.visiting.host }}</div> {# Removed strong tag from label #}
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if education.networks %}
-    <div class="education-item networks">
-        <h3>Research Networks</h3>
-        {% for network in education.networks %}
-        <div class="network-item">
-            <a href="{{ network.url }}" target="_blank" rel="noopener">{{ network.name }}</a>
-            <p>{{ network.description }}</p>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-</section>
-
-<section class="interests">
-    <h2>Research Interests</h2>
-    <ul>
-        {% for interest in research_interests %}
-        <li>{{ interest }}</li>
-        {% endfor %}
-    </ul>
-</section>
-
-<section class="publications">
-    <h2>Working Papers</h2>
-    {% for pub in publications %}
-    <div class="publication">
-        <div class="publication-title">{{ pub.title }}</div>
-        <div class="publication-authors">{{ pub.authors }}</div>
-        {% if pub.journal %}<div class="publication-journal">{{ pub.journal }}</div>{% endif %}
-    </div>
-    {% endfor %}
-</section>
-
-<section class="dissemination">
-    <h2>Research Dissemination</h2>
-    <p class="dissemination-note">{{ research_dissemination.description }}</p>
-    <ul>
-        {% for venue in research_dissemination.venues %}
-        <li>{{ venue }}</li>
-        {% endfor %}
-    </ul>
-</section>
-
-<section class="industry">
-    <h2>Industry Experience</h2>
-    {% for exp in industry_experience %}
-    <div class="experience-item">
-        <div class="role">{{ exp.role }}</div>
-        <div class="organization">{{ exp.organization }}</div>
-        {% if exp.period %}<div class="meta">{{ exp.period }}</div>{% endif %}
-        <div class="description">{{ exp.description|safe }}</div>
-    </div>
-    {% endfor %}
-</section>
-
-<section class="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        {% for category, details in technical_skills.items() %}
-        <div class="skill-category">
-            <h3>{{ category|replace('_', ' ')|title }}</h3>
-            <p class="skill-description">{{ details.description }}</p>
-            <div class="skill-tags">
-                {% for tool in details.tools %}
-                <span class="skill-tag">{{ tool }}</span>
-                {% endfor %}
+    <div class="container header-content">
+        <div class="header-profile">
+            <img src="{{ image_url }}" alt="{{ name }}" class="profile-image-small">
+            <div class="profile-info">
+                <h1>{{ name }}</h1>
+                <p>Finance PhD Candidate</p>
             </div>
         </div>
-        {% endfor %}
+        <nav class="header-nav">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#research" class="nav-link">Research</a>
+            <a href="#experience" class="nav-link">Experience</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-content fade-in">
+        <img src="{{ image_url }}" alt="{{ name }}" class="profile-image-large">
+        <h2 class="hero-title">{{ name }}</h2>
+        <p class="hero-subtitle">{{ headline }}</p>
+        <div class="social-links">
+            {% for link in links %}
+            <a href="{{ link.url }}" class="social-link" target="_blank" rel="noopener">
+                {% if link.text == 'CV' %}
+                <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                </svg>
+                {% else %}
+                <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="{{ link.svg_path }}"/>
+                </svg>
+                {% endif %}
+                {{ link.text }}
+            </a>
+            {% endfor %}
+        </div>
     </div>
 </section>
 
-<section class="teaching">
-    <h2>Teaching</h2>
-    <ul>
-        {% for item in teaching %}
-        <li>{{ item }}</li>
-        {% endfor %}
-    </ul>
-</section>
+<!-- MAIN CONTENT -->
+<main class="main">
+    <div class="container">
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    </svg>
+                    About
+                </h2>
+            </div>
+            <div class="card">
+                <p class="card-description">{{ about_me }}</p>
+            </div>
+        </section>
 
-<section class="awards">
-    <h2>Awards & Grants</h2>
-    {# Use the updated text from WEBSITE_DATA #}
-    <p>{{ awards_and_grants }}</p>
-</section>
+        <!-- EDUCATION -->
+        <section id="education" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                    </svg>
+                    Education & Affiliations
+                </h2>
+            </div>
 
-<footer>
-    <p>&copy; {{ current_year }} {{ name }}</p>
+            <div class="card">
+                <h3 class="card-title">{{ education.phd.degree }}</h3>
+                <p class="card-meta">
+                    <a href="{{ education.phd.program_url }}" target="_blank">{{ education.phd.program }}</a> •
+                    {{ education.phd.institution }} •
+                    {{ education.phd.period }}
+                </p>
+                <p class="card-description">{{ education.phd.description }}</p>
+                {% if education.phd.supervisors %}
+                <div style="margin-top: var(--spacing-md);">
+                    <strong style="font-size: var(--font-size-sm);">Supervisors:</strong>
+                    <ul class="custom-list" style="margin-top: var(--spacing-sm);">
+                        {% for supervisor in education.phd.supervisors %}
+                        <li style="font-size: var(--font-size-sm);">{{ supervisor }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+            {% if education.visiting %}
+            <div class="card">
+                <h3 class="card-title">{{ education.visiting.position }}</h3>
+                <p class="card-meta">
+                    {{ education.visiting.institution }} • {{ education.visiting.period }}
+                </p>
+                {% if education.visiting.host %}
+                <p class="card-description">Host: {{ education.visiting.host }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if education.networks %}
+            <div class="card">
+                <h3 class="card-title">Research Networks</h3>
+                {% for network in education.networks %}
+                <p class="card-meta">
+                    <a href="{{ network.url }}" target="_blank">{{ network.name }}</a>
+                </p>
+                <p class="card-description">{{ network.description }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- RESEARCH INTERESTS -->
+        <section id="interests" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                    </svg>
+                    Research Interests
+                </h2>
+            </div>
+            <div class="badges">
+                {% for interest in research_interests %}
+                <span class="badge badge-accent">{{ interest }}</span>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- WORKING PAPERS (UPDATED SECTION) -->
+        <section id="research" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+                    </svg>
+                    Working Papers
+                </h2>
+            </div>
+            {% for pub in publications %}
+            <div class="card">
+                <h3 class="card-title">{{ pub.title }}</h3>
+                <p class="card-meta">{{ pub.authors }}</p>
+                {% if pub.journal %}
+                <p class="card-meta">{{ pub.journal }}</p>
+                {% endif %}
+
+                <!-- Publication Links -->
+                {% if pub.paper_url or pub.code_url or pub.slides_url or pub.bibtex %}
+                <div class="pub-links">
+                    {% if pub.paper_url %}
+                    <a href="{{ pub.paper_url }}" class="pub-link pdf-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                        Paper
+                    </a>
+                    {% endif %}
+
+                    {% if pub.code_url %}
+                    <a href="{{ pub.code_url }}" class="pub-link code-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                        </svg>
+                        Code
+                    </a>
+                    {% endif %}
+
+                    {% if pub.slides_url %}
+                    <a href="{{ pub.slides_url }}" class="pub-link slides-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+                        </svg>
+                        Slides
+                    </a>
+                    {% endif %}
+
+                    {% if pub.bibtex %}
+                    <button class="pub-link bibtex-link" onclick="toggleBibtex(this)">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 9h10v2H7zm0 4h10v2H7zm0-8h10v2H7zm12-1v13c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2z"/>
+                        </svg>
+                        BibTeX
+                    </button>
+                    {% endif %}
+                </div>
+
+                <!-- BibTeX Citation -->
+                {% if pub.bibtex %}
+                <div class="bibtex-container" style="display: none;">
+                    <pre class="bibtex-box">{{ pub.bibtex }}</pre>
+                    <button class="copy-bibtex" onclick="copyBibtex(this)">Copy</button>
+                </div>
+                {% endif %}
+                {% endif %}
+
+                <!-- Presentations (if any) -->
+                {% if pub.presentations and pub.presentations|length > 0 %}
+                <div style="margin-top: var(--spacing-lg);">
+                    <p style="font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--spacing-sm);">
+                        Presentations:
+                    </p>
+                    <div class="badges">
+                        {% for pres in pub.presentations %}
+                        <span class="badge" title="Presented by {{ pres.presenter }}">
+                    {{ pres.venue }} ({{ pres.year }}){% if pres.presenter %} — {{ pres.presenter }}{% endif %}
+                </span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </section>
+
+        <!-- INDUSTRY EXPERIENCE -->
+        <section id="experience" class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                    </svg>
+                    Industry Experience
+                </h2>
+            </div>
+            <div class="grid">
+                {% for exp in industry_experience %}
+                <div class="card">
+                    <h3 class="card-title">{{ exp.role }}</h3>
+                    <p class="card-meta">{{ exp.organization }}</p>
+                    {% if exp.period %}
+                    <p class="card-meta">{{ exp.period }}</p>
+                    {% endif %}
+                    <p class="card-description">{{ exp.description|safe }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                    </svg>
+                    Technical Skills
+                </h2>
+            </div>
+            <div class="grid">
+                {% for category, details in technical_skills.items() %}
+                <div class="card">
+                    <h3 class="card-title">{{ category|replace('_', ' ')|title }}</h3>
+                    <p class="card-description">{{ details.description }}</p>
+                    <div class="badges">
+                        {% for tool in details.tools %}
+                        <span class="badge">{{ tool }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- TEACHING -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                    </svg>
+                    Teaching
+                </h2>
+            </div>
+            <ul class="custom-list">
+                {% for item in teaching %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- AWARDS & GRANTS -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Awards & Grants
+                </h2>
+            </div>
+            <div class="card">
+                <p class="card-description">{{ awards_and_grants }}</p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-content">
+        <p>© {{ current_year }} {{ name }}. All rights reserved.</p>
+    </div>
 </footer>
+
+<!-- SCRIPTS -->
+<script>
+    // Dark mode toggle with system preference detection and localStorage persistence
+    function toggleDarkMode() {
+        const body = document.body;
+        const moonIcon = document.querySelector('.toggle-icon.moon');
+        const sunIcon = document.querySelector('.toggle-icon.sun');
+        const toggleText = document.querySelector('.toggle-text');
+
+        body.classList.toggle('dark-mode');
+
+        if (body.classList.contains('dark-mode')) {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+            toggleText.textContent = 'Light';
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            moonIcon.style.display = 'block';
+            sunIcon.style.display = 'none';
+            toggleText.textContent = 'Dark';
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    }
+
+    // Toggle BibTeX visibility
+    function toggleBibtex(button) {
+        const container = button.closest('.card').querySelector('.bibtex-container');
+        if (container) {
+            const isHidden = container.style.display === 'none';
+            container.style.display = isHidden ? 'block' : 'none';
+
+            // Update button text
+            const svg = button.querySelector('svg');
+            const text = button.childNodes[button.childNodes.length - 1];
+            text.textContent = isHidden ? ' Hide' : ' BibTeX';
+        }
+    }
+
+    // Copy BibTeX to clipboard
+    function copyBibtex(button) {
+        const bibtexBox = button.previousElementSibling;
+        const text = bibtexBox.innerText;
+
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.background = 'var(--cyber-cyan)';
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }).catch(() => {
+            alert('Failed to copy BibTeX');
+        });
+    }
+
+    // Initialize dark mode based on system preference or saved preference
+    document.addEventListener('DOMContentLoaded', function() {
+        const moonIcon = document.querySelector('.toggle-icon.moon');
+        const sunIcon = document.querySelector('.toggle-icon.sun');
+        const toggleText = document.querySelector('.toggle-text');
+        const savedDarkMode = localStorage.getItem('darkMode');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Default to dark mode if no saved preference, or use saved preference
+        if (savedDarkMode === 'enabled' || (savedDarkMode === null && prefersDark)) {
+            document.body.classList.add('dark-mode');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+            toggleText.textContent = 'Light';
+        } else if (savedDarkMode === 'disabled') {
+            document.body.classList.remove('dark-mode');
+            moonIcon.style.display = 'block';
+            sunIcon.style.display = 'none';
+            toggleText.textContent = 'Dark';
+        }
+    });
+</script>
 </body>
 </html>

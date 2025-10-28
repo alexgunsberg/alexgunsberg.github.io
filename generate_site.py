@@ -11,11 +11,13 @@ WEBSITE_DATA = {
     # FINAL CONSENSUS HEADLINE:
     "headline": "PhD Candidate, Hanken School of Economics | Visiting Scholar, UNC Kenan-Flagler",
 
-    "image_url": "Alex_Gunsberg_web_half.jpg", # Make sure this image is optimized and in the same folder
+    "image_url": "Alex_Gunsberg_web_half.jpg",
 
-    # FINAL BIO: Establishes GSF prestige immediately via placement record
-    "about_me": "I am a PhD Candidate in Finance at Finland's Graduate School of Finance (GSF), the national doctoral program whose recent graduates hold positions at London Business School, Imperial College London, Ohio State University, and Erasmus Rotterdam. I am affiliated with Hanken School of Economics and currently a visiting scholar at the UNC Kenan-Flagler Business School (Jan 2025 – Dec 2026), working under the supervision of Professor Camelia M. Kuhnen. I am also an active member of the Nordic Finance Network (NFN), spanning 14 institutions across four Nordic countries. My research applies machine learning and large-scale data analysis to questions in Household Finance, Behavioral Finance, and Urban Economics. Before academia, I spent over a decade as an entrepreneur and in data-intensive industry roles—founding multiple tech startups where I raised over €3M from investors and successfully exited two ventures, building production ML systems as a Data Scientist at Silicon Labs (NASDAQ-listed), and developing systematic trading strategies at Estlander & Partners hedge fund. This blend of rigorous quantitative training and entrepreneurial and technical experience shapes my approach to data-driven research in finance.",
-
+    # FINAL BIO:
+    "about_me": """PhD candidate in Finance specializing in Household Finance, Behavioral Finance,
+                and Urban Economics. I apply machine learning and data-driven analysis to
+                real-world financial behaviors and policy challenges. Currently visiting scholar
+                at UNC Kenan-Flagler Business School.""",
 
     "education": {
         "phd": {
@@ -25,33 +27,34 @@ WEBSITE_DATA = {
             "institution": "Hanken School of Economics",
             "period": "September 2021 – Present",
             "location": "Helsinki, Finland",
-            # Added Supervisors back into the education structure
+            "description": "Finland's national doctoral program in finance. Joint venture of seven universities. Recent graduate placements include London Business School, Imperial College London, Ohio State University, and Erasmus Rotterdam.",
             "supervisors": [
                 "Professor Camelia M. Kuhnen (UNC Kenan-Flagler Business School)",
                 "Professor Anders Löflund (Hanken School of Economics)"
             ]
         },
+        "networks": [
+            {
+                "name": "Nordic Finance Network (NFN)",
+                "url": "https://nfn.aalto.fi",
+                "description": "Selective doctoral training network for Nordic finance researchers. Members collaborate on empirical research and present at network workshops."
+            }
+        ],
+
         "visiting": {
             "position": "Visiting Scholar",
             "institution": "UNC Kenan-Flagler Business School",
             "period": "January 2025 – December 2026",
             "location": "Chapel Hill, North Carolina, USA",
-            # Added Host back into the education structure
             "host": "Professor Camelia M. Kuhnen"
         },
-        "networks": [
-            {
-                "name": "Nordic Finance Network (NFN)",
-                "url": "https://nfn.aalto.fi",
-                "description": "Active member of the research and doctoral training network across 14 institutions in Denmark, Finland, Norway, and Sweden."
-            }
-        ]
+
     },
 
     "links": [
         {
             "text": "CV",
-            "url": "cv_alexgunsberg_public.pdf", # Make sure this PDF is in the same folder
+            "url": "cv_alexgunsberg_public.pdf",
             "svg_path": "M21.172 5.172l-1.414 1.414-2.828-2.828 1.414-1.414q0.293-0.293 0.707-0.293t0.707 0.293l1.414 1.414q0.293 0.293 0.293 0.707t-0.293 0.707zM3 21v-15h11v3h6v12h-17zM13 9h-8v10h8v-10zM15 11.828v-0.828h2v1h-1.172l-3.328 3.328v0.828h-2v-1h1.172l3.328-3.328zM15 19v-1.172l-3.328-3.328h-0.828v-2h-1v1.172l3.328 3.328h0.828v2h1z"
         },
         {
@@ -59,15 +62,25 @@ WEBSITE_DATA = {
             "url": "https://www.linkedin.com/in/gunsberg/",
             "svg_path": "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
         },
-        { # UPDATED SSRN URL
+        {
             "text": "SSRN",
             "url": "https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=8819120",
             "svg_path": "M21.57,6.37l-3.34-3.34a1.22,1.22,0,0,0-1.73,0L2.37,17.15a1.22,1.22,0,0,0,0,1.73l3.34,3.34a1.22,1.22,0,0,0,1.73,0L21.57,8.1a1.22,1.22,0,0,0,0-1.73ZM7.88,19.44,5.12,16.68l9.37-9.37,2.76,2.76Zm10.19-10.19L15.31,6.5l2.76-2.76,2.76,2.76Z"
         },
-        { # UPDATED Google Scholar URL
+        {
+            "text": "ORCID",
+            "url": "https://orcid.org/0000-0002-2854-7628",
+            "svg_path": "M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0m0 2.667c5.133 0 9.333 4.201 9.333 9.333s-4.201 9.333-9.333 9.333S2.667 17.133 2.667 12 6.867 2.667 12 2.667m2.84 9.714c.266.001.48-.213.479-.479 0-.266-.214-.48-.48-.479-.266 0-.48.213-.479.479 0 .266.214.48.48.479m0-2.667c.71 0 1.287-.577 1.287-1.286 0-.71-.577-1.287-1.287-1.287s-1.286.577-1.286 1.287.576 1.286 1.286 1.286m2.666 4c0 1.333.444 2.667 1.333 2.667.889 0 .889-1.333 1.777-1.333s.889 1.333 1.778 1.333 1.333-1.334 1.333-2.667c0-1.334-.444-2.667-1.333-2.667-.889 0-.889 1.334-1.778 1.334s-.889-1.334-1.778-1.334c-.889 0-1.333 1.333-1.333 2.667m-5.84-1.333h-.667c-.888 0-1.333.444-1.333 1.333v2c0 .889.445 1.334 1.333 1.334h.667c.889 0 1.334-.445 1.334-1.334v-2c0-.889-.445-1.333-1.334-1.333m0 3.333h-.667c-.445 0-.667-.222-.667-.667v-2c0-.444.222-.666.667-.666h.667c.444 0 .667.222.667.666v2c0 .445-.223.667-.667.667m-2.666-3.333h-.667c-.444 0-.666.444-.666 1.333v2c0 .889.222 1.334.666 1.334h.667c.445 0 .667-.445.667-1.334v-2c0-.889-.222-1.333-.667-1.333m0 3.333h-.667c-.222 0-.333-.222-.333-.667v-2c0-.444.111-.666.333-.666h.667c.222 0 .333.222.333.666v2c0 .445-.111.667-.333.667m5.84-5.333v2.667h1.333v-2.667"
+        },
+        {
             "text": "Google Scholar",
             "url": "https://scholar.google.com/citations?user=JqmhniAAAAAJ&hl=en",
             "svg_path": "M12 24a7 7 0 1 1 7-7 7 7 0 0 1-7 7zm0-10a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 8a5 5 0 1 0 5 5 5 5 0 0 0-5-5zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
+        },
+        {
+            "text": "Hanken Profile",
+            "url": "https://harisportal.hanken.fi/en/persons/alex-g%C3%BCnsberg/",
+            "svg_path": "M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
         },
         {
             "text": "Github",
@@ -90,36 +103,86 @@ WEBSITE_DATA = {
     "publications": [
         {
             "title": "(Job Market Paper) Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending",
-            "authors": "Alex Günsberg",
-            "journal": ""
+            "authors": "Alex P. Günsberg",
+            "journal": "Working Paper",
+            "bibtex": "",
+            "paper_url": "",
+            "code_url": "",
+            "slides_url": "",
+            "presentations": []  # ← Placeholder for future presentations
         },
         {
             "title": "Learning How to Borrow in a Fintech World",
             "authors": "with Camelia M. Kuhnen",
-            "journal": "Working Paper"
+            "journal": "Working Paper",
+            "bibtex": "",
+            "paper_url": "",
+            "code_url": "",
+            "slides_url": "",
+            "presentations": [  # ← List of presentations for THIS paper
+                {
+                    "venue": "NYU Stern",
+                    "year": 2025,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "HEC Lausanne and EPFL",
+                    "year": 2025,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "University of Geneva",
+                    "year": 2025,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "American University",
+                    "year": 2025,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "University of Michigan",
+                    "year": 2024,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "FDIC",
+                    "year": 2024,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "Erasmus University Rotterdam",
+                    "year": 2024,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "HEC Montreal",
+                    "year": 2024,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "Federal Reserve Bank of Philadelphia",
+                    "year": 2024,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "University of South Carolina",
+                    "year": 2024,
+                    "presenter": "Camelia M. Kuhnen"
+                }
+            ]
         },
         {
             "title": "(Title TBD)",
             "authors": "with Camelia M. Kuhnen and Yunzhi Hu",
-            "journal": ""
+            "journal": "",
+            "bibtex": "",
+            "paper_url": "",
+            "code_url": "",
+            "slides_url": "",
+            "presentations": []  # ← Placeholder for future presentations
         }
     ],
-
-    "research_dissemination": {
-        "description": "My co-authored research has been presented at:",
-        "venues": [
-            "HEC Lausanne and EPFL (Nov 2025)",
-            "University of Geneva (Nov 2025)",
-            "American University (Oct 2025)",
-            "NYU Stern (May 2025)",
-            "University of Michigan (Nov 2024)",
-            "FDIC (Oct 2024)",
-            "Erasmus University Rotterdam (Oct 2024)",
-            "HEC Montreal (Apr 2024)",
-            "Federal Reserve Bank of Philadelphia (Mar 2024)",
-            "University of South Carolina (Mar 2024)"
-        ]
-    },
 
     "teaching": [
         "Thesis supervisor for 30+ M.Sc. and B.Sc. students (2021–2025)",
@@ -140,9 +203,10 @@ WEBSITE_DATA = {
         },
         {
             "role": "Data Scientist",
-            "organization": "Silicon Labs (NASDAQ-listed semiconductor)",
+            "organization": "Silicon Labs (formerly NASDAQ-listed semiconductor)",
             "period": "September 2020 – August 2021",
-            "description": "Contributed to data-driven projects, applying advanced Python to process and analyze large-scale proprietary datasets"        },
+            "description": "Solo architect of production forecasting system: MSSQL ETL → AWS SageMaker/Forecast models → Tableau dashboards. Built automated data pipelines (S3, Python, SQL) processing proprietary transactional records with scheduled predictions."
+        },
         {
             "role": "Senior Sales Manager",
             "organization": "Estlander & Partners (algorithm-based hedge fund)",
