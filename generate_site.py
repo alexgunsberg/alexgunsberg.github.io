@@ -1,19 +1,58 @@
+import json
+from jinja2 import Environment, FileSystemLoader
+import datetime
+import os
+
+# --- Step 1: Your Information ---
+# This dictionary holds all the content for your website.
 WEBSITE_DATA = {
     "name": "Alex P. Günsberg",
 
-    # CORRECTED: Shorter, cleaner headline
+    # FINAL CONSENSUS HEADLINE:
     "headline": "PhD Candidate, Hanken School of Economics | Visiting Scholar, UNC Kenan-Flagler",
 
-    "image_url": "Alex_Gunsberg_web_optimized.jpg",
+    "image_url": "Alex_Gunsberg_web_half.jpg", # Make sure this image is optimized and in the same folder
 
-    "about_me": "I am a PhD Candidate in Finance at Finland's Graduate School of Finance (GSF), the national doctoral program whose recent graduates hold positions at London Business School, Imperial College London, Ohio State University, and Erasmus Rotterdam. I am affiliated with Hanken School of Economics and currently a visiting scholar at the UNC Kenan-Flagler Business School (Jan 2025 – Dec 2026), working under Professor Camelia M. Kuhnen. I am also an active member of the Nordic Finance Network (NFN), spanning 14 institutions across four Nordic countries. My research applies machine learning and large-scale data analysis to questions in Household Finance, Behavioral Finance, and Urban Economics. Before academia, I spent over a decade as an entrepreneur and in data-intensive industry roles—founding multiple tech startups where I raised over €3M from investors and successfully exited two ventures, building production ML systems as a Data Scientist at Silicon Labs (NASDAQ-listed), and developing systematic trading strategies at Estlander & Partners hedge fund. This blend of rigorous quantitative training and entrepreneurial and technical experience shapes my approach to data-driven research in finance.",
+    # FINAL BIO: Establishes GSF prestige immediately via placement record
+    "about_me": "I am a PhD Candidate in Finance at Finland's Graduate School of Finance (GSF), the national doctoral program whose recent graduates hold positions at London Business School, Imperial College London, Ohio State University, and Erasmus Rotterdam. I am affiliated with Hanken School of Economics and currently a visiting scholar at the UNC Kenan-Flagler Business School (Jan 2025 – Dec 2026), working under the supervision of Professor Camelia M. Kuhnen. I am also an active member of the Nordic Finance Network (NFN), spanning 14 institutions across four Nordic countries. My research applies machine learning and large-scale data analysis to questions in Household Finance, Behavioral Finance, and Urban Economics. Before academia, I spent over a decade as an entrepreneur and in data-intensive industry roles—founding multiple tech startups where I raised over €3M from investors and successfully exited two ventures, building production ML systems as a Data Scientist at Silicon Labs (NASDAQ-listed), and developing systematic trading strategies at Estlander & Partners hedge fund. This blend of rigorous quantitative training and entrepreneurial and technical experience shapes my approach to data-driven research in finance.",
 
     "email": "cv.fondness@gunsberg.org",
+
+    "education": {
+        "phd": {
+            "degree": "Ph.D. in Finance",
+            "program": "Graduate School of Finance (GSF)",
+            "program_url": "https://gsf.aalto.fi",
+            "institution": "Hanken School of Economics",
+            "period": "September 2021 – Present",
+            "location": "Helsinki, Finland",
+            # Added Supervisors back into the education structure
+            "supervisors": [
+                "Professor Camelia M. Kuhnen (UNC Kenan-Flagler Business School)",
+                "Professor Anders Löflund (Hanken School of Economics)"
+            ]
+        },
+        "visiting": {
+            "position": "Visiting Scholar",
+            "institution": "UNC Kenan-Flagler Business School",
+            "period": "January 2025 – December 2026",
+            "location": "Chapel Hill, North Carolina, USA",
+            # Added Host back into the education structure
+            "host": "Professor Camelia M. Kuhnen"
+        },
+        "networks": [
+            {
+                "name": "Nordic Finance Network (NFN)",
+                "url": "https://nfn.aalto.fi",
+                "description": "Active member of the research and doctoral training network across 14 institutions in Denmark, Finland, Norway, and Sweden."
+            }
+        ]
+    },
 
     "links": [
         {
             "text": "CV",
-            "url": "cv_alexgunsberg_public.pdf",
+            "url": "cv_alexgunsberg_public.pdf", # Make sure this PDF is in the same folder
             "svg_path": "M21.172 5.172l-1.414 1.414-2.828-2.828 1.414-1.414q0.293-0.293 0.707-0.293t0.707 0.293l1.414 1.414q0.293 0.293 0.293 0.707t-0.293 0.707zM3 21v-15h11v3h6v12h-17zM13 9h-8v10h8v-10zM15 11.828v-0.828h2v1h-1.172l-3.328 3.328v0.828h-2v-1h1.172l3.328-3.328zM15 19v-1.172l-3.328-3.328h-0.828v-2h-1v1.172l3.328 3.328h0.828v2h1z"
         },
         {
@@ -23,12 +62,12 @@ WEBSITE_DATA = {
         },
         {
             "text": "SSRN",
-            "url": "#",
+            "url": "#",  # TODO: Create at papers.ssrn.com
             "svg_path": "M21.57,6.37l-3.34-3.34a1.22,1.22,0,0,0-1.73,0L2.37,17.15a1.22,1.22,0,0,0,0,1.73l3.34,3.34a1.22,1.22,0,0,0,1.73,0L21.57,8.1a1.22,1.22,0,0,0,0-1.73ZM7.88,19.44,5.12,16.68l9.37-9.37,2.76,2.76Zm10.19-10.19L15.31,6.5l2.76-2.76,2.76,2.76Z"
         },
         {
             "text": "Google Scholar",
-            "url": "#",
+            "url": "#",  # TODO: Create at scholar.google.com
             "svg_path": "M12 24a7 7 0 1 1 7-7 7 7 0 0 1-7 7zm0-10a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 8a5 5 0 1 0 5 5 5 5 0 0 0-5-5zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
         },
         {
@@ -42,36 +81,6 @@ WEBSITE_DATA = {
             "svg_path": "M3.5 18.5v-13l17 6.5-17 6.5zm1.5-11.338v8.676l11.056-4.338-11.056-4.338z"
         }
     ],
-
-    "education": {
-        "phd": {
-            "degree": "Ph.D. in Finance",
-            "program": "Graduate School of Finance (GSF)",
-            "program_url": "https://gsf.aalto.fi",
-            "institution": "Hanken School of Economics",
-            "period": "September 2021 – Present",
-            "location": "Helsinki, Finland",
-            "description": "The GSF is Finland's national doctoral program in finance, a joint venture of seven universities including Hanken. Recent graduate placements include London Business School, Imperial College London, Ohio State University, Erasmus Rotterdam, University of Miami, and University of St. Gallen.",
-            "supervisors": [
-                "Professor Camelia M. Kuhnen (UNC Kenan-Flagler Business School)",
-                "Professor Anders Löflund (Hanken School of Economics)"
-            ]
-        },
-        "visiting": {
-            "position": "Visiting Scholar",
-            "institution": "UNC Kenan-Flagler Business School",
-            "period": "January 2025 – December 2026",
-            "location": "Chapel Hill, North Carolina, USA",
-            "host": "Professor Camelia M. Kuhnen"
-        },
-        "networks": [
-            {
-                "name": "Nordic Finance Network (NFN)",
-                "url": "https://nfn.aalto.fi",
-                "description": "Member of research and doctoral training network across 14 institutions in Denmark, Finland, Norway, and Sweden. Funded by the Nasdaq Nordic Foundation."
-            }
-        ]
-    },
 
     "research_interests": [
         "Household Finance",
@@ -115,13 +124,12 @@ WEBSITE_DATA = {
     },
 
     "teaching": [
-        "Thesis supervisor for 30+ M.Sc. and B.Sc. students (2021–2025)",
+        "Thesis supervisor for 30+ M.Sc. and B.Sc. students (2021–2025)", # Added '+' based on last user code
         "Chairman for 44 M.Sc. and B.Sc. Seminars (2021–2024)",
         "Grading over 100 referee reports and seminar presentations (2021–2024)",
         "Mentee in Hanken's Teacher Mentor Program, Pilot group (2022)"
     ],
 
-    # CORRECTED: No dates, better foundation description
     "awards_and_grants": "Recipient of competitive research, working, and travel grants from numerous economic, research, and cultural foundations.",
 
     "industry_experience": [
@@ -162,7 +170,50 @@ WEBSITE_DATA = {
         },
         "research_workflow": {
             "description": "Modern computational research practices",
-            "tools": ["Git", "LaTeX", "Jupyter", "R", "Stata"]
+            "tools": ["Git", "LaTeX", "Jupyter", "R", "Stata"] # Added Stata based on last user code
         }
     }
 }
+
+
+# --- Step 2: Site Generation ---
+def main():
+    """Main function to generate the website."""
+
+    # --- DEBUGGING LINES (Optional: Keep or remove) ---
+    print("--- Starting Debug ---")
+    current_directory = os.getcwd()
+    print(f"Current Working Directory: {current_directory}")
+    print("Files found in this directory:")
+    for filename in os.listdir('.'):
+        print(f" - {filename}")
+
+    template_path = os.path.join(current_directory, 'template.html')
+    if os.path.exists(template_path):
+        print("\nSUCCESS: Python's os.path.exists() CAN find template.html.")
+    else:
+        print("\nERROR: Python's os.path.exists() CANNOT find template.html.")
+        print("Please ensure 'template.html' is in the same directory as this script.")
+        print("--- End Debug ---")
+        return # Exit the script
+    print("--- End Debug ---\n")
+    # --- END DEBUGGING ---
+
+    # Add current year to data for footer
+    WEBSITE_DATA['current_year'] = datetime.datetime.now().year
+
+    # Set up Jinja2 environment
+    env = Environment(loader=FileSystemLoader('.')) # Looks for templates in the current directory
+    template = env.get_template('template.html')
+
+    # Render the template with your data
+    html_content = template.render(WEBSITE_DATA)
+
+    # Write the rendered HTML to index.html
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(html_content)
+
+    print("Successfully generated index.html with updated content!")
+
+if __name__ == '__main__':
+    main()

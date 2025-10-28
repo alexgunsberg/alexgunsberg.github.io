@@ -3,178 +3,672 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Günsberg (Guensberg) - Academic Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Alex P. Günsberg - PhD Candidate in Finance specializing in Household Finance, Behavioral Finance, and Machine Learning">
+    <title>Alex P. Günsberg - Finance PhD Candidate</title>
+
     <style>
+        /* === RESET & BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            color: #333;
+            background: #fff;
         }
-        .section-title {
-            @apply text-2xl font-bold text-slate-800 mb-6 border-b-2 border-slate-200 pb-3;
+
+        /* === HEADER === */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        .card {
-            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-300;
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            display: block;
         }
-        .sidebar-card {
-             @apply bg-white border border-slate-200 rounded-xl;
+
+        h1 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .headline {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        /* === LINKS === */
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .links a {
+            color: #0066CC;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .links a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
+
+        /* === SECTIONS === */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #333;
+            margin-top: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #0066CC;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #0066CC;
+        }
+
+        /* === EDUCATION SECTION === */
+        .education-item {
+            margin-bottom: 2em;
+        }
+
+        .degree {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 0.5em;
+        }
+
+        .program {
+            font-size: 1em;
+            margin-bottom: 0.25em;
+        }
+
+        .program a {
+            color: #0066CC;
+            text-decoration: none;
+        }
+
+        .program a:hover {
+            text-decoration: underline;
+        }
+
+        .institution {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 0.25em;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 1em;
+        }
+
+        .program-description {
+            background: #f8f9fa;
+            padding: 1em;
+            border-left: 3px solid #0066CC;
+            margin: 1em 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .supervisors {
+            margin-top: 1em;
+        }
+
+        .supervisors ul {
+            margin: 0.5em 0 0 1.5em;
+        }
+
+        .supervisors li {
+            margin-bottom: 0.25em;
+            font-size: 0.95em;
+        }
+
+        /* Visiting position */
+        .visiting-position {
+            margin-top: 2em;
+            padding: 1em;
+            background: #f0f8ff;
+            border-left: 3px solid #0066CC;
+        }
+
+        .visiting-position h3 {
+            font-size: 1em;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .visiting-position .meta {
+            font-style: italic;
+            margin: 0.25em 0;
+        }
+
+        .visiting-position .host {
+            margin-top: 0.5em;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Networks */
+        .networks {
+            margin-top: 2em;
+            padding-top: 1.5em;
+            border-top: 1px solid #eee;
+        }
+
+        .networks h3 {
+            font-size: 1em;
+            margin-bottom: 1em;
+            margin-top: 0;
+        }
+
+        .network-item {
+            margin-bottom: 1em;
+        }
+
+        .network-item a {
+            font-weight: 600;
+            color: #0066CC;
+        }
+
+        .network-item p {
+            margin: 0.5em 0 0 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* === INDUSTRY EXPERIENCE === */
+        .experience-item {
+            margin-bottom: 1.5em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .role {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #1a1a1a;
+        }
+
+        .organization {
+            color: #555;
+            font-size: 0.95em;
+            margin: 0.25em 0;
+        }
+
+        .description {
+            color: #444;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-top: 0.5em;
+        }
+
+        /* === TECHNICAL SKILLS === */
+        .skill-category {
+            margin-bottom: 1.5em;
+        }
+
+        .skill-category h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 0.5em;
+            text-transform: capitalize;
+            margin-top: 0;
+        }
+
+        .skill-description {
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+        }
+
+        .skill-tag {
+            background: #f5f5f5;
+            padding: 0.35em 0.75em;
+            border-radius: 3px;
+            font-size: 0.85em;
+            color: #555;
+            border: 1px solid #ddd;
+        }
+
+        /* === RESEARCH DISSEMINATION === */
+        .dissemination-note {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+        }
+
+        /* === PUBLICATIONS === */
+        .publication {
+            margin-bottom: 1.5em;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 0.25em;
+        }
+
+        .publication-authors {
+            font-style: italic;
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 0.25em;
+        }
+
+        .publication-journal {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* === FOOTER === */
+        footer {
+            margin-top: 3em;
+            padding-top: 2em;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #0066CC;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.75em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .skill-tags {
+                gap: 0.35em;
+            }
+
+            .skill-tag {
+                padding: 0.25em 0.5em;
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-700">
+<body>
+<!-- HEADER -->
+<div class="header">
+    <img src="Alex_Gunsberg_web_half.jpg" alt="Alex P. Günsberg" class="profile-image" loading="lazy">
+    <h1>Alex P. Günsberg</h1>
+    <p class="headline">PhD Candidate, Hanken School of Economics | Visiting Scholar, UNC Kenan-Flagler</p>
 
-<!-- Main Container -->
-<div class="container mx-auto max-w-4xl p-4 sm:p-6 md:p-8">
-
-    <!-- Header / About Section -->
-    <header class="mb-16">
-        <div class="flex flex-col md:flex-row items-center gap-8">
-            <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0">
-                <img src="Alex_Gunsberg_web_half.jpg" alt="Portrait of Alex Günsberg (Guensberg)" class="rounded-full w-full h-full object-cover shadow-2xl">
-            </div>
-            <div class="text-center md:text-left">
-                <!-- UPDATED FONT SIZES FOR NAME -->
-                <h1 class="text-3xl md:text-4xl font-bold text-slate-900">Alex Günsberg (Guensberg)</h1>
-                <p class="text-xl text-slate-600 mt-2">PhD Candidate in Finance | Visiting Scholar at UNC Kenan-Flagler</p>
-                <!-- UPDATED FONT SIZE FOR BIO -->
-                <p class="mt-4 text-base leading-relaxed">
-                    I am a PhD Candidate in Finance at the Graduate School of Finance (GSF), affiliated with the Hanken School of Economics, and a visiting scholar at the UNC Kenan-Flagler Business School. My research interests lie at the intersection of Household Finance, Behavioral Finance, and Urban Economics. In my work, I heavily utilize machine learning and Python-based data engineering skills, drawing on over a decade of industry experience. This includes exposure to systematic strategies as a Senior Sales Manager at a CTA hedge fund and honing my quantitative skills as a Data Scientist and entrepreneur. This background provides me with a unique, practice-oriented perspective on financial markets and data-driven research.
-                </p>
-                <div class="mt-6 flex justify-center md:justify-start space-x-2">
-                    
-                    <a href="https://www.linkedin.com/in/gunsberg/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-                        </svg>
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                    
-                    <a href="https://github.com/alexgunsberg" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-                        </svg>
-                        <span class="sr-only">Github</span>
-                    </a>
-                    
-                    <a href="https://datacamp.com/profile/alexgunsberg" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 p-2 rounded-full hover:bg-slate-100 transition-all duration-300">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M3.5 18.5v-13l17 6.5-17 6.5zm1.5-11.338v8.676l11.056-4.338-11.056-4.338z"></path>
-                        </svg>
-                        <span class="sr-only">DataCamp</span>
-                    </a>
-                    
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content Grid -->
-    <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Left Column -->
-        <div class="md:col-span-2 space-y-12">
-
-            <!-- Research Section -->
-            <section id="research">
-                <h2 class="section-title">Research</h2>
-                <div class="space-y-8">
-                    
-                    <div class="card p-8">
-                        <h3 class="text-xl font-bold text-slate-900">(Job Market Paper) Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending</h3>
-                        <p class="text-slate-500 mt-2 text-md">Alex Günsberg</p>
-                        
-                        
-                    </div>
-                    
-                    <div class="card p-8">
-                        <h3 class="text-xl font-bold text-slate-900">Learning How to Borrow in a Fintech World</h3>
-                        <p class="text-slate-500 mt-2 text-md">with Camelia M. Kuhnen</p>
-                        
-                        <p class="mt-3 italic text-slate-600">Working Paper. Presented at: Federal Reserve Bank of Philadelphia, University of South Carolina, HEC Montreal, Erasmus Rotterdam, FDIC, and University of Michigan (2024).</p>
-                        
-                        
-                    </div>
-                    
-                    <div class="card p-8">
-                        <h3 class="text-xl font-bold text-slate-900">(Title TBD)</h3>
-                        <p class="text-slate-500 mt-2 text-md">with Camelia M. Kuhnen and Yunzhi Hu</p>
-                        
-                        
-                    </div>
-                    
-                </div>
-            </section>
-
-            <!-- Teaching Section -->
-            <section id="teaching">
-                <h2 class="section-title">Teaching Experience</h2>
-                <ul class="list-disc list-inside space-y-3 text-lg">
-                    
-                    <li>Thesis supervisor for 30+ M.Sc. and B.Sc. students (2021-2024)</li>
-                    
-                    <li>Chairman for 42 B.Sc. Seminars</li>
-                    
-                    <li>Grading +100 referee reports and seminar presentations</li>
-                    
-                    <li>Mentee in Hanken’s Teacher Mentor Program, Pilot group (2022)</li>
-                    
-                </ul>
-            </section>
-        </div>
-
-        <!-- Right Column -->
-        <aside class="space-y-8">
-            <div class="sidebar-card p-6">
-                <h3 class="text-xl font-semibold text-slate-800 mb-4">Research Interests</h3>
-                <ul class="space-y-2">
-                    
-                    <li class="flex items-center">
-                        <span class="text-blue-500 mr-3">&#10003;</span>
-                        <span>Household Finance</span>
-                    </li>
-                    
-                    <li class="flex items-center">
-                        <span class="text-blue-500 mr-3">&#10003;</span>
-                        <span>Behavioral Finance</span>
-                    </li>
-                    
-                    <li class="flex items-center">
-                        <span class="text-blue-500 mr-3">&#10003;</span>
-                        <span>Urban Economics</span>
-                    </li>
-                    
-                </ul>
-            </div>
-            <div class="sidebar-card p-6">
-                <h3 class="text-xl font-semibold text-slate-800 mb-4">Industry Experience</h3>
-                <ul class="space-y-4">
-                    
-                    <li>
-                        <strong class="text-slate-900 font-semibold">Senior Sales Manager</strong><br>
-                        <span class="text-slate-500">Estlander & Partners (CTA Hedge Fund)</span>
-                    </li>
-                    
-                    <li>
-                        <strong class="text-slate-900 font-semibold">Data Scientist</strong><br>
-                        <span class="text-slate-500">Silicon Labs (formerly Nasdaq listed)</span>
-                    </li>
-                    
-                    <li>
-                        <strong class="text-slate-900 font-semibold">Co-Founder & Board Member</strong><br>
-                        <span class="text-slate-500">Multiple Startups, 2012-2023</span>
-                    </li>
-                    
-                </ul>
-            </div>
-        </aside>
-    </main>
-
-    <!-- Footer -->
-    <footer class="text-center mt-16 pt-8 border-t border-slate-200">
-        <p class="text-slate-500">&copy; 2025 Alex Günsberg (Guensberg). Generated with Python.</p>
-    </footer>
+    <!-- LINKS -->
+    <div class="links">
+        
+        <a href="cv_alexgunsberg_public.pdf" target="_blank" rel="noopener">CV</a>
+        
+        <a href="https://www.linkedin.com/in/gunsberg/" target="_blank" rel="noopener">LinkedIn</a>
+        
+        <a href="#" target="_blank" rel="noopener">SSRN</a>
+        
+        <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+        
+        <a href="https://github.com/alexgunsberg" target="_blank" rel="noopener">Github</a>
+        
+        <a href="https://datacamp.com/profile/alexgunsberg" target="_blank" rel="noopener">DataCamp</a>
+        
+    </div>
 </div>
+
+<!-- ABOUT -->
+<section class="about">
+    <h2>About</h2>
+    <p>I am a PhD Candidate in Finance at Finland's Graduate School of Finance (GSF), the national doctoral program whose recent graduates hold positions at London Business School, Imperial College London, Ohio State University, and Erasmus Rotterdam. I am affiliated with Hanken School of Economics and currently a visiting scholar at the UNC Kenan-Flagler Business School (Jan 2025 – Dec 2026), working under the supervision of Professor Camelia M. Kuhnen. I am also an active member of the Nordic Finance Network (NFN), spanning 14 institutions across four Nordic countries. My research applies machine learning and large-scale data analysis to questions in Household Finance, Behavioral Finance, and Urban Economics. Before academia, I spent over a decade as an entrepreneur and in data-intensive industry roles—founding multiple tech startups where I raised over €3M from investors and successfully exited two ventures, building production ML systems as a Data Scientist at Silicon Labs (NASDAQ-listed), and developing systematic trading strategies at Estlander & Partners hedge fund. This blend of rigorous quantitative training and entrepreneurial and technical experience shapes my approach to data-driven research in finance.</p>
+</section>
+
+<!-- EDUCATION -->
+<section class="education">
+    <h2>Education & Affiliations</h2>
+
+    <!-- PhD -->
+    <div class="education-item">
+        <div class="degree">Ph.D. in Finance</div>
+        <div class="program">
+            <a href="https://gsf.aalto.fi" target="_blank" rel="noopener">
+                Graduate School of Finance (GSF)
+            </a>
+        </div>
+        <div class="institution">Hanken School of Economics</div>
+        <div class="meta">September 2021 – Present | Helsinki, Finland</div>
+
+        <p class="program-description"></p>
+
+        
+        <div class="supervisors">
+            <strong>Supervisors:</strong>
+            <ul>
+                
+                <li>Professor Camelia M. Kuhnen (UNC Kenan-Flagler Business School)</li>
+                
+                <li>Professor Anders Löflund (Hanken School of Economics)</li>
+                
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Visiting Position -->
+    
+    <div class="visiting-position">
+        <h3>Visiting Scholar</h3>
+        <div class="institution">UNC Kenan-Flagler Business School</div>
+        <div class="meta">January 2025 – December 2026 | Chapel Hill, North Carolina, USA</div>
+        
+        <div class="host"><strong>Host:</strong> Professor Camelia M. Kuhnen</div>
+        
+    </div>
+    
+
+    <!-- Networks -->
+    
+    <div class="networks">
+        <h3>Research Networks</h3>
+        
+        <div class="network-item">
+            <a href="https://nfn.aalto.fi" target="_blank" rel="noopener">Nordic Finance Network (NFN)</a>
+            <p>Active member of the research and doctoral training network across 14 institutions in Denmark, Finland, Norway, and Sweden.</p>
+        </div>
+        
+    </div>
+    
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section class="interests">
+    <h2>Research Interests</h2>
+    <ul>
+        
+        <li>Household Finance</li>
+        
+        <li>Behavioral Finance</li>
+        
+        <li>Urban Economics</li>
+        
+        <li>Machine Learning in Finance</li>
+        
+    </ul>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="publications">
+    <h2>Publications</h2>
+    
+    <div class="publication">
+        <div class="publication-title">(Job Market Paper) Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending</div>
+        <div class="publication-authors">Alex Günsberg</div>
+        
+    </div>
+    
+    <div class="publication">
+        <div class="publication-title">Learning How to Borrow in a Fintech World</div>
+        <div class="publication-authors">with Camelia M. Kuhnen</div>
+        <div class="publication-journal">Working Paper</div>
+    </div>
+    
+    <div class="publication">
+        <div class="publication-title">(Title TBD)</div>
+        <div class="publication-authors">with Camelia M. Kuhnen and Yunzhi Hu</div>
+        
+    </div>
+    
+</section>
+
+<!-- RESEARCH DISSEMINATION -->
+<section class="dissemination">
+    <h2>Research Dissemination</h2>
+    <p class="dissemination-note">My co-authored research has been presented at:</p>
+    <ul>
+        
+        <li>NYU Stern (2025)</li>
+        
+        <li>HEC Lausanne and EPFL (2025)</li>
+        
+        <li>University of Geneva (2025)</li>
+        
+        <li>American University (2025)</li>
+        
+        <li>University of Michigan (2024)</li>
+        
+        <li>FDIC (2024)</li>
+        
+        <li>Erasmus University Rotterdam (2024)</li>
+        
+        <li>HEC Montreal (2024)</li>
+        
+        <li>Federal Reserve Bank of Philadelphia (2024)</li>
+        
+        <li>University of South Carolina (2024)</li>
+        
+    </ul>
+</section>
+
+<!-- INDUSTRY EXPERIENCE -->
+<section class="industry">
+    <h2>Industry Experience</h2>
+    
+    <div class="experience-item">
+        <div class="role">Entrepreneur & Technical Co-Founder</div>
+        <div class="organization">Multiple startups</div>
+        <div class="meta">April 2010 – March 2020</div>
+        <div class="description">Over <strong>10 years</strong> as tech entrepreneur: founded multiple ventures, raised <strong>€3M+</strong> from VCs and angels, and successfully exited two companies (omadesign.fi, brandphoto.fi)</div>
+    </div>
+    
+    <div class="experience-item">
+        <div class="role">Data Scientist</div>
+        <div class="organization">Silicon Labs (NASDAQ-listed semiconductor)</div>
+        <div class="meta">September 2020 – August 2021</div>
+        <div class="description">Built machine learning pipelines processing <strong>50M+ data points</strong>; deployed predictive models to production</div>
+    </div>
+    
+    <div class="experience-item">
+        <div class="role">Senior Sales Manager</div>
+        <div class="organization">Estlander & Partners (algorithm-based hedge fund)</div>
+        <div class="meta">January 2011 – February 2013</div>
+        <div class="description">Specialized in systematic trading strategies and quantitative investment approaches</div>
+    </div>
+    
+    <div class="experience-item">
+        <div class="role">Business Area Manager</div>
+        <div class="organization">Aalto University Executive Education</div>
+        <div class="meta">June 2014 – June 2015</div>
+        <div class="description">Managed program development and client relationships</div>
+    </div>
+    
+</section>
+
+<!-- TECHNICAL SKILLS -->
+<section class="skills">
+    <h2>Technical Skills</h2>
+    
+    <div class="skill-category">
+        <h3>Machine Learning</h3>
+        <p class="skill-description">Production ML experience with large-scale financial datasets</p>
+        <div class="skill-tags">
+            
+            <span class="skill-tag">Python</span>
+            
+            <span class="skill-tag">XGBoost</span>
+            
+            <span class="skill-tag">Scikit-learn</span>
+            
+            <span class="skill-tag">Neural Networks</span>
+            
+            <span class="skill-tag">Random Forests</span>
+            
+        </div>
+    </div>
+    
+    <div class="skill-category">
+        <h3>Data Engineering</h3>
+        <p class="skill-description">Data processing, cleaning, and analysis pipelines</p>
+        <div class="skill-tags">
+            
+            <span class="skill-tag">Pandas</span>
+            
+            <span class="skill-tag">NumPy</span>
+            
+            <span class="skill-tag">SQL</span>
+            
+            <span class="skill-tag">AWS</span>
+            
+            <span class="skill-tag">Spark</span>
+            
+        </div>
+    </div>
+    
+    <div class="skill-category">
+        <h3>Research Workflow</h3>
+        <p class="skill-description">Modern computational research practices</p>
+        <div class="skill-tags">
+            
+            <span class="skill-tag">Git</span>
+            
+            <span class="skill-tag">LaTeX</span>
+            
+            <span class="skill-tag">Jupyter</span>
+            
+            <span class="skill-tag">R</span>
+            
+            <span class="skill-tag">Stata</span>
+            
+        </div>
+    </div>
+    
+</section>
+
+<!-- TEACHING -->
+<section class="teaching">
+    <h2>Teaching</h2>
+    <ul>
+        
+        <li>Thesis supervisor for 30+ M.Sc. and B.Sc. students (2021–2025)</li>
+        
+        <li>Chairman for 44 M.Sc. and B.Sc. Seminars (2021–2024)</li>
+        
+        <li>Grading over 100 referee reports and seminar presentations (2021–2024)</li>
+        
+        <li>Mentee in Hanken's Teacher Mentor Program, Pilot group (2022)</li>
+        
+    </ul>
+</section>
+
+<!-- AWARDS & GRANTS -->
+<section class="awards">
+    <h2>Awards & Grants</h2>
+    <p>Recipient of competitive research, working, and travel grants from numerous economic, research, and cultural foundations.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Contact: <span id="email-contact"></span></p>
+    <script>
+        // Email obfuscation to prevent scraper bots
+        (function() {
+            const u = 'cv.fondness';
+            const d = 'gunsberg.org';
+            const email = u + '@' + d;
+            document.getElementById('email-contact').innerHTML =
+                '<a href="mailto:' + email + '">' + email + '</a>';
+        })();
+    </script>
+</footer>
 </body>
 </html>
