@@ -8,408 +8,298 @@
 
     <style>
         /* === RESET & BASE === */
+        :root {
+            --text-primary: #1a1a1a; /* Darker text for better contrast */
+            --text-secondary: #555;
+            --accent-color: #0066CC; /* Standard blue, professional */
+            --bg-light: #f8f9fa; /* Very light gray for subtle backgrounds */
+            --border-color: #e0e0e0; /* Slightly softer border */
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7; /* Increased slightly for readability */
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
-            color: #333;
+            padding: 2.5rem 1.5rem; /* Increased top/bottom padding */
+            color: var(--text-primary);
             background: #fff;
         }
 
         /* === HEADER === */
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem; /* Increased margin */
         }
-
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 180px; /* Slightly smaller */
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1.5rem;
-            display: block;
+            display: inline-block;
+            border: 3px solid var(--border-color); /* Subtle border */
         }
-
         h1 {
-            font-size: 2em;
+            font-size: 2.2em; /* Slightly larger */
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: #1a1a1a;
+            color: var(--text-primary);
         }
-
         .headline {
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.15em; /* Slightly larger */
+            margin-bottom: 2rem; /* Increased margin */
+            font-weight: 300; /* Lighter weight for headline */
         }
 
-        /* === LINKS === */
+        /* === LINKS (Icons Restored) === */
         .links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1rem; /* Slightly reduced gap */
+            margin-bottom: 3rem; /* Increased margin */
+            align-items: center;
         }
-
         .links a {
-            color: #0066CC;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px; /* Add padding for better spacing */
+            border: 1px solid transparent; /* Prepare for hover border */
+            border-radius: 6px; /* Slightly rounded */
         }
-
+        .links a svg {
+             width: 18px; /* Slightly smaller icons */
+             height: 18px;
+             fill: var(--text-secondary);
+             transition: fill 0.2s ease;
+         }
         .links a:hover {
             color: #004499;
-            text-decoration: underline;
+            text-decoration: none; /* No underline on hover */
+            background-color: var(--bg-light); /* Subtle background on hover */
+            border: 1px solid var(--border-color); /* Add border on hover */
         }
+         .links a:hover svg {
+             fill: #004499;
+         }
 
         /* === SECTIONS === */
         section {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem; /* Consistent bottom margin */
+             padding: 2rem 0; /* Add top/bottom padding within sections */
         }
+         /* Subtle alternating backgrounds */
+         section:nth-of-type(odd) {
+             background-color: var(--bg-light);
+             margin-left: -1.5rem; /* Extend background to edge */
+             margin-right: -1.5rem;
+             padding-left: 1.5rem;
+             padding-right: 1.5rem;
+             border-top: 1px solid var(--border-color); /* Add top border */
+             border-bottom: 1px solid var(--border-color); /* Add bottom border */
+         }
+         section:first-of-type { /* No top border/padding for first section */
+             border-top: none;
+             padding-top: 0;
+         }
 
         h2 {
-            font-size: 1.5em;
+            font-size: 1.6em; /* Slightly larger */
             font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem; /* Increased margin */
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem; /* Increased padding */
         }
-
         h3 {
-            font-size: 1.1em;
+            font-size: 1.15em;
             font-weight: 600;
             margin-bottom: 0.75rem;
-            color: #333;
-            margin-top: 1rem;
+            color: var(--text-primary); /* Darker h3 */
+            margin-top: 1.5rem; /* Increased top margin */
         }
-
+         section > h3:first-child { /* No top margin if h3 is first element */
+             margin-top: 0;
+         }
         p {
             margin-bottom: 1rem;
             line-height: 1.7;
         }
-
         ul {
+            list-style-position: outside;
             margin-left: 1.5rem;
             margin-bottom: 1rem;
         }
-
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem; /* Slightly increased spacing */
         }
-
         a {
-            color: #0066CC;
+            color: var(--accent-color);
             text-decoration: none;
         }
-
         a:hover {
             text-decoration: underline;
         }
-
-        strong {
+        strong { /* For emphasized numbers */
             font-weight: 600;
-            color: #0066CC;
+            color: var(--accent-color);
         }
 
         /* === EDUCATION SECTION === */
         .education-item {
-            margin-bottom: 2em;
+            margin-bottom: 1.5em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid var(--border-color);
         }
-
+        .education-item:last-of-type {
+             border-bottom: none;
+             padding-bottom: 0;
+             margin-bottom: 0; /* Remove bottom margin for last item */
+         }
         .degree {
             font-size: 1.1em;
             font-weight: 600;
-            margin-bottom: 0.5em;
-        }
-
-        .program {
-            font-size: 1em;
             margin-bottom: 0.25em;
         }
-
-        .program a {
-            color: #0066CC;
-            text-decoration: none;
-        }
-
-        .program a:hover {
-            text-decoration: underline;
-        }
-
-        .institution {
-            color: #555;
-            font-size: 0.95em;
-            margin-bottom: 0.25em;
-        }
-
-        .meta {
-            color: #666;
-            font-size: 0.9em;
-            font-style: italic;
-            margin-bottom: 1em;
-        }
-
-        .program-description {
-            background: #f8f9fa;
-            padding: 1em;
-            border-left: 3px solid #0066CC;
-            margin: 1em 0;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .supervisors {
-            margin-top: 1em;
-        }
-
-        .supervisors ul {
-            margin: 0.5em 0 0 1.5em;
-        }
-
-        .supervisors li {
-            margin-bottom: 0.25em;
-            font-size: 0.95em;
-        }
-
-        /* Visiting position */
+        .program a { font-weight: 500; } /* Make program name slightly bolder */
+        .institution { color: var(--text-secondary); font-size: 0.95em; margin-bottom: 0.25em; }
+        .meta { color: #777; font-size: 0.9em; font-style: italic; margin-bottom: 0.75em; }
+        .supervisors { margin-top: 1em; font-size: 0.95em; }
+        .supervisors ul { margin: 0.5em 0 0 1.5em; }
+        .supervisors li { margin-bottom: 0.25em; color: var(--text-secondary); }
         .visiting-position {
-            margin-top: 2em;
-            padding: 1em;
-            background: #f0f8ff;
-            border-left: 3px solid #0066CC;
+            margin-top: 1.5em;
+            padding: 1.25em; /* Increased padding */
+            background: #eaf6ff; /* Slightly different blue highlight */
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .visiting-position h3 {
-            font-size: 1em;
-            margin-top: 0;
-            margin-bottom: 0.5em;
-        }
-
-        .visiting-position .meta {
-            font-style: italic;
-            margin: 0.25em 0;
-        }
-
-        .visiting-position .host {
-            margin-top: 0.5em;
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        /* Networks */
-        .networks {
-            margin-top: 2em;
-            padding-top: 1.5em;
-            border-top: 1px solid #eee;
-        }
-
-        .networks h3 {
-            font-size: 1em;
-            margin-bottom: 1em;
-            margin-top: 0;
-        }
-
-        .network-item {
-            margin-bottom: 1em;
-        }
-
-        .network-item a {
-            font-weight: 600;
-            color: #0066CC;
-        }
-
-        .network-item p {
-            margin: 0.5em 0 0 0;
-            font-size: 0.9em;
-            color: #555;
-        }
+        .visiting-position h3 { font-size: 1.05em; margin-top: 0; margin-bottom: 0.5em; }
+        .visiting-position .host { margin-top: 0.75em; font-size: 0.9em; color: var(--text-secondary); }
+         .visiting-position .host strong { color: var(--text-secondary); font-weight: 500; } /* Less emphasis on "Host:" */
+        .networks { margin-top: 1.5em; padding-top: 1.5em; border-top: 1px solid var(--border-color); }
+        .networks h3 { font-size: 1.05em; margin-bottom: 1em; margin-top: 0; }
+        .network-item { margin-bottom: 1em; }
+        .network-item:last-child { margin-bottom: 0; }
+        .network-item a { font-weight: 600; }
+        .network-item p { margin: 0.25em 0 0 0; font-size: 0.9em; color: var(--text-secondary); }
 
         /* === INDUSTRY EXPERIENCE === */
         .experience-item {
             margin-bottom: 1.5em;
             padding-bottom: 1.5em;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
         }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .role {
-            font-weight: 600;
-            font-size: 1.05em;
-            color: #1a1a1a;
-        }
-
-        .organization {
-            color: #555;
-            font-size: 0.95em;
-            margin: 0.25em 0;
-        }
-
-        .description {
-            color: #444;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-top: 0.5em;
-        }
+        .experience-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .role { font-weight: 600; font-size: 1.05em; color: var(--text-primary); }
+        .organization { color: var(--text-secondary); font-size: 0.95em; margin: 0.25em 0; }
+        .experience-item .meta { color: #777; font-size: 0.9em; font-style: italic; margin-bottom: 0.75em; }
+        .description { color: var(--text-primary); font-size: 1em; line-height: 1.7; margin-top: 0.5em; }
 
         /* === TECHNICAL SKILLS === */
+        .skills-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted min width */
+             gap: 1rem; /* Slightly reduced gap */
+         }
         .skill-category {
-            margin-bottom: 1.5em;
+            margin-bottom: 0;
+             padding: 1.25rem; /* Increased padding */
+             border: 1px solid var(--border-color);
+             border-radius: 6px; /* Increased rounding */
+             background: #fff; /* Ensure white background if section is shaded */
         }
-
         .skill-category h3 {
             font-size: 1em;
             font-weight: 600;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.75rem; /* Increased margin */
             text-transform: capitalize;
             margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem; /* Increased padding */
         }
-
-        .skill-description {
-            color: #555;
-            font-size: 0.9em;
-            margin-bottom: 0.5em;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5em;
-        }
-
+        .skill-description { color: var(--text-secondary); font-size: 0.9em; margin-bottom: 1rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6em; /* Increased gap */ }
         .skill-tag {
-            background: #f5f5f5;
-            padding: 0.35em 0.75em;
-            border-radius: 3px;
-            font-size: 0.85em;
-            color: #555;
-            border: 1px solid #ddd;
+            background: #e9ecef; /* Slightly darker tag background */
+            padding: 5px 10px; /* Adjusted padding */
+            border-radius: 4px;
+            font-size: 0.8em; /* Slightly smaller tag text */
+            color: #495057; /* Darker tag text */
+            border: none; /* Removed border */
+            font-weight: 500;
         }
 
         /* === RESEARCH DISSEMINATION === */
-        .dissemination-note {
-            font-style: italic;
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 0.5em;
-        }
+        .dissemination-note { font-style: italic; color: var(--text-secondary); font-size: 0.9em; margin-bottom: 0.75rem; }
 
-        /* === PUBLICATIONS === */
-        .publication {
-            margin-bottom: 1.5em;
-        }
-
-        .publication-title {
-            font-weight: 600;
-            margin-bottom: 0.25em;
-        }
-
-        .publication-authors {
-            font-style: italic;
-            color: #555;
-            font-size: 0.95em;
-            margin-bottom: 0.25em;
-        }
-
-        .publication-journal {
-            color: #666;
-            font-size: 0.9em;
-        }
+        /* === PUBLICATIONS / WORKING PAPERS === */
+        .publication { margin-bottom: 1.5em; }
+        .publication:last-child { margin-bottom: 0; }
+        .publication-title { font-weight: 600; margin-bottom: 0.25em; font-size: 1.05em; }
+        .publication-authors { font-style: italic; color: var(--text-secondary); font-size: 0.95em; margin-bottom: 0.25em; }
+        .publication-journal { color: #777; font-size: 0.9em; }
 
         /* === FOOTER === */
         footer {
-            margin-top: 3em;
+            margin-top: 3.5em; /* Increased margin */
             padding-top: 2em;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--border-color);
             text-align: center;
         }
-
-        footer p {
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        footer a {
-            color: #0066CC;
-        }
+        footer p { color: #777; font-size: 0.9em; margin-bottom: 0.5em; }
+        footer p:last-child { margin-bottom: 0; }
+        footer a { color: var(--accent-color); font-weight: 500; }
 
         /* === RESPONSIVE === */
         @media (max-width: 600px) {
-            body {
-                padding: 1.5rem 1rem;
-            }
-
-            h1 {
-                font-size: 1.75em;
-            }
-
-            h2 {
-                font-size: 1.3em;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-
-            .links {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.75rem;
-            }
-
-            .skill-tags {
-                gap: 0.35em;
-            }
-
-            .skill-tag {
-                padding: 0.25em 0.5em;
-                font-size: 0.8em;
-            }
+            body { padding: 2rem 1rem; }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.4em; }
+            .profile-image { width: 150px; height: 150px; }
+            .links { gap: 0.75rem; } /* Reduce gap further on mobile */
+             .skills-grid { grid-template-columns: 1fr; gap: 1rem; }
         }
     </style>
 </head>
 <body>
-<!-- HEADER -->
-<div class="header">
+<header class="header">
     <img src="{{ image_url }}" alt="{{ name }}" class="profile-image" loading="lazy">
     <h1>{{ name }}</h1>
     <p class="headline">{{ headline }}</p>
 
-    <!-- LINKS -->
-    <div class="links">
+    <nav class="links">
         {% for link in links %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.text }}</a>
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" title="{{ link.text }}"> {# Added title attribute #}
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="{{ link.svg_path }}"></path></svg>
+            <span>{{ link.text }}</span>
+        </a>
         {% endfor %}
-    </div>
-</div>
+    </nav>
+</header>
 
-<!-- ABOUT -->
 <section class="about">
     <h2>About</h2>
     <p>{{ about_me }}</p>
 </section>
 
-<!-- EDUCATION -->
 <section class="education">
     <h2>Education & Affiliations</h2>
 
-    <!-- PhD -->
-    <div class="education-item">
+    <div class="education-item phd">
         <div class="degree">{{ education.phd.degree }}</div>
         <div class="program">
             <a href="{{ education.phd.program_url }}" target="_blank" rel="noopener">
@@ -418,8 +308,6 @@
         </div>
         <div class="institution">{{ education.phd.institution }}</div>
         <div class="meta">{{ education.phd.period }} | {{ education.phd.location }}</div>
-
-        <p class="program-description">{{ education.phd.description }}</p>
 
         {% if education.phd.supervisors %}
         <div class="supervisors">
@@ -433,21 +321,19 @@
         {% endif %}
     </div>
 
-    <!-- Visiting Position -->
     {% if education.visiting %}
-    <div class="visiting-position">
+    <div class="education-item visiting-position">
         <h3>{{ education.visiting.position }}</h3>
         <div class="institution">{{ education.visiting.institution }}</div>
         <div class="meta">{{ education.visiting.period }} | {{ education.visiting.location }}</div>
         {% if education.visiting.host %}
-        <div class="host"><strong>Host:</strong> {{ education.visiting.host }}</div>
+        <div class="host">Host: {{ education.visiting.host }}</div> {# Removed strong tag from label #}
         {% endif %}
     </div>
     {% endif %}
 
-    <!-- Networks -->
     {% if education.networks %}
-    <div class="networks">
+    <div class="education-item networks">
         <h3>Research Networks</h3>
         {% for network in education.networks %}
         <div class="network-item">
@@ -459,7 +345,6 @@
     {% endif %}
 </section>
 
-<!-- RESEARCH INTERESTS -->
 <section class="interests">
     <h2>Research Interests</h2>
     <ul>
@@ -469,9 +354,8 @@
     </ul>
 </section>
 
-<!-- PUBLICATIONS -->
 <section class="publications">
-    <h2>Publications</h2>
+    <h2>Working Papers</h2>
     {% for pub in publications %}
     <div class="publication">
         <div class="publication-title">{{ pub.title }}</div>
@@ -481,7 +365,6 @@
     {% endfor %}
 </section>
 
-<!-- RESEARCH DISSEMINATION -->
 <section class="dissemination">
     <h2>Research Dissemination</h2>
     <p class="dissemination-note">{{ research_dissemination.description }}</p>
@@ -492,7 +375,6 @@
     </ul>
 </section>
 
-<!-- INDUSTRY EXPERIENCE -->
 <section class="industry">
     <h2>Industry Experience</h2>
     {% for exp in industry_experience %}
@@ -505,23 +387,23 @@
     {% endfor %}
 </section>
 
-<!-- TECHNICAL SKILLS -->
 <section class="skills">
     <h2>Technical Skills</h2>
-    {% for category, details in technical_skills.items() %}
-    <div class="skill-category">
-        <h3>{{ category|replace('_', ' ')|title }}</h3>
-        <p class="skill-description">{{ details.description }}</p>
-        <div class="skill-tags">
-            {% for tool in details.tools %}
-            <span class="skill-tag">{{ tool }}</span>
-            {% endfor %}
+    <div class="skills-grid">
+        {% for category, details in technical_skills.items() %}
+        <div class="skill-category">
+            <h3>{{ category|replace('_', ' ')|title }}</h3>
+            <p class="skill-description">{{ details.description }}</p>
+            <div class="skill-tags">
+                {% for tool in details.tools %}
+                <span class="skill-tag">{{ tool }}</span>
+                {% endfor %}
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </section>
 
-<!-- TEACHING -->
 <section class="teaching">
     <h2>Teaching</h2>
     <ul>
@@ -531,25 +413,14 @@
     </ul>
 </section>
 
-<!-- AWARDS & GRANTS -->
 <section class="awards">
     <h2>Awards & Grants</h2>
+    {# Use the updated text from WEBSITE_DATA #}
     <p>{{ awards_and_grants }}</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>Contact: <span id="email-contact"></span></p>
-    <script>
-        // Email obfuscation to prevent scraper bots
-        (function() {
-            const u = 'cv.fondness';
-            const d = 'gunsberg.org';
-            const email = u + '@' + d;
-            document.getElementById('email-contact').innerHTML =
-                '<a href="mailto:' + email + '">' + email + '</a>';
-        })();
-    </script>
+    <p>&copy; {{ current_year }} {{ name }}</p>
 </footer>
 </body>
 </html>

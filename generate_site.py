@@ -16,7 +16,6 @@ WEBSITE_DATA = {
     # FINAL BIO: Establishes GSF prestige immediately via placement record
     "about_me": "I am a PhD Candidate in Finance at Finland's Graduate School of Finance (GSF), the national doctoral program whose recent graduates hold positions at London Business School, Imperial College London, Ohio State University, and Erasmus Rotterdam. I am affiliated with Hanken School of Economics and currently a visiting scholar at the UNC Kenan-Flagler Business School (Jan 2025 – Dec 2026), working under the supervision of Professor Camelia M. Kuhnen. I am also an active member of the Nordic Finance Network (NFN), spanning 14 institutions across four Nordic countries. My research applies machine learning and large-scale data analysis to questions in Household Finance, Behavioral Finance, and Urban Economics. Before academia, I spent over a decade as an entrepreneur and in data-intensive industry roles—founding multiple tech startups where I raised over €3M from investors and successfully exited two ventures, building production ML systems as a Data Scientist at Silicon Labs (NASDAQ-listed), and developing systematic trading strategies at Estlander & Partners hedge fund. This blend of rigorous quantitative training and entrepreneurial and technical experience shapes my approach to data-driven research in finance.",
 
-    "email": "cv.fondness@gunsberg.org",
 
     "education": {
         "phd": {
@@ -60,14 +59,14 @@ WEBSITE_DATA = {
             "url": "https://www.linkedin.com/in/gunsberg/",
             "svg_path": "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
         },
-        {
+        { # UPDATED SSRN URL
             "text": "SSRN",
-            "url": "#",  # TODO: Create at papers.ssrn.com
+            "url": "https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=8819120",
             "svg_path": "M21.57,6.37l-3.34-3.34a1.22,1.22,0,0,0-1.73,0L2.37,17.15a1.22,1.22,0,0,0,0,1.73l3.34,3.34a1.22,1.22,0,0,0,1.73,0L21.57,8.1a1.22,1.22,0,0,0,0-1.73ZM7.88,19.44,5.12,16.68l9.37-9.37,2.76,2.76Zm10.19-10.19L15.31,6.5l2.76-2.76,2.76,2.76Z"
         },
-        {
+        { # UPDATED Google Scholar URL
             "text": "Google Scholar",
-            "url": "#",  # TODO: Create at scholar.google.com
+            "url": "https://scholar.google.com/citations?user=JqmhniAAAAAJ&hl=en",
             "svg_path": "M12 24a7 7 0 1 1 7-7 7 7 0 0 1-7 7zm0-10a3 3 0 1 0 3 3 3 3 0 0 0-3-3zm0 8a5 5 0 1 0 5 5 5 5 0 0 0-5-5zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
         },
         {
@@ -86,7 +85,6 @@ WEBSITE_DATA = {
         "Household Finance",
         "Behavioral Finance",
         "Urban Economics",
-        "Machine Learning in Finance"
     ],
 
     "publications": [
@@ -110,27 +108,28 @@ WEBSITE_DATA = {
     "research_dissemination": {
         "description": "My co-authored research has been presented at:",
         "venues": [
-            "NYU Stern (2025)",
-            "HEC Lausanne and EPFL (2025)",
-            "University of Geneva (2025)",
-            "American University (2025)",
-            "University of Michigan (2024)",
-            "FDIC (2024)",
-            "Erasmus University Rotterdam (2024)",
-            "HEC Montreal (2024)",
-            "Federal Reserve Bank of Philadelphia (2024)",
-            "University of South Carolina (2024)"
+            "HEC Lausanne and EPFL (Nov 2025)",
+            "University of Geneva (Nov 2025)",
+            "American University (Oct 2025)",
+            "NYU Stern (May 2025)",
+            "University of Michigan (Nov 2024)",
+            "FDIC (Oct 2024)",
+            "Erasmus University Rotterdam (Oct 2024)",
+            "HEC Montreal (Apr 2024)",
+            "Federal Reserve Bank of Philadelphia (Mar 2024)",
+            "University of South Carolina (Mar 2024)"
         ]
     },
 
     "teaching": [
-        "Thesis supervisor for 30+ M.Sc. and B.Sc. students (2021–2025)", # Added '+' based on last user code
+        "Thesis supervisor for 30+ M.Sc. and B.Sc. students (2021–2025)",
         "Chairman for 44 M.Sc. and B.Sc. Seminars (2021–2024)",
         "Grading over 100 referee reports and seminar presentations (2021–2024)",
         "Mentee in Hanken's Teacher Mentor Program, Pilot group (2022)"
     ],
 
-    "awards_and_grants": "Recipient of competitive research, working, and travel grants from numerous economic, research, and cultural foundations.",
+    # In WEBSITE_DATA
+    "awards_and_grants": "Secured funding from over 15 competitive grants for research, travel, and working support from various economic, research, and cultural foundations.",
 
     "industry_experience": [
         {
@@ -143,8 +142,7 @@ WEBSITE_DATA = {
             "role": "Data Scientist",
             "organization": "Silicon Labs (NASDAQ-listed semiconductor)",
             "period": "September 2020 – August 2021",
-            "description": "Built machine learning pipelines processing <strong>50M+ data points</strong>; deployed predictive models to production"
-        },
+            "description": "Contributed to data-driven projects, applying advanced Python to process and analyze large-scale proprietary datasets"        },
         {
             "role": "Senior Sales Manager",
             "organization": "Estlander & Partners (algorithm-based hedge fund)",
@@ -159,18 +157,15 @@ WEBSITE_DATA = {
         }
     ],
 
+    # Technical Skills:
     "technical_skills": {
-        "machine_learning": {
-            "description": "Production ML experience with large-scale financial datasets",
-            "tools": ["Python", "XGBoost", "Scikit-learn", "Neural Networks", "Random Forests"]
+        "python_data_science": {
+            "description": "Applying Python libraries for quantitative finance research, including data manipulation, econometrics, machine learning, and visualization.",
+            "tools": ["Python", "SciPy", "Statsmodels", "Linearmodels", "Scikit-learn", "Plotting Libraries (Matplotlib, Seaborn)", "SQL", "AWS"]
         },
-        "data_engineering": {
-            "description": "Data processing, cleaning, and analysis pipelines",
-            "tools": ["Pandas", "NumPy", "SQL", "AWS", "Spark"]
-        },
-        "research_workflow": {
-            "description": "Modern computational research practices",
-            "tools": ["Git", "LaTeX", "Jupyter", "R", "Stata"] # Added Stata based on last user code
+        "research_and_reporting": {
+            "description": "Utilizing standard tools for version control, collaboration, and academic publishing.",
+            "tools": ["Git", "LaTeX (via Overleaf, Python integration)"]
         }
     }
 }
@@ -180,7 +175,7 @@ WEBSITE_DATA = {
 def main():
     """Main function to generate the website."""
 
-    # --- DEBUGGING LINES (Optional: Keep or remove) ---
+    # --- DEBUGGING LINES ---
     print("--- Starting Debug ---")
     current_directory = os.getcwd()
     print(f"Current Working Directory: {current_directory}")
