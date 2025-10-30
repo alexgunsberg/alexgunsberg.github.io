@@ -64,7 +64,7 @@ WEBSITE_DATA = {
         },
         {
             "text": "SSRN",
-            "url": "https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=8819120",
+            "url": "https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=1153517",
             "svg_path": "M21.57,6.37l-3.34-3.34a1.22,1.22,0,0,0-1.73,0L2.37,17.15a1.22,1.22,0,0,0,0,1.73l3.34,3.34a1.22,1.22,0,0,0,1.73,0L21.57,8.1a1.22,1.22,0,0,0,0-1.73ZM7.88,19.44,5.12,16.68l9.37-9.37,2.76,2.76Zm10.19-10.19L15.31,6.5l2.76-2.76,2.76,2.76Z"
         },
         {
