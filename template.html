@@ -9,14 +9,14 @@
     <link rel="alternate" href="https://gunsberg.org/" />
 
     <!-- SEO Meta Tags -->
-    <title>{{ name }} — PhD Candidate in Finance | Machine Learning | Hanken School of Economics</title>
+    <title>{{ name }} â€” PhD Candidate in Finance | Machine Learning | Hanken School of Economics</title>
     <meta name="description" content="PhD candidate in Finance at Hanken School of Economics, specializing in household finance, behavioral finance, and machine learning. Visiting scholar at UNC Kenan-Flagler.">
-    <meta name="keywords" content="Alex Günsberg, finance, PhD, Hanken, University, machine learning, household finance, behavioral finance, Nordic Finance Network, UNC Kenan-Flagler, academic CV, researcher">
+    <meta name="keywords" content="Alex GÃ¼nsberg, finance, PhD, Hanken, University, machine learning, household finance, behavioral finance, Nordic Finance Network, UNC Kenan-Flagler, academic CV, researcher">
     <meta name="author" content="{{ name }}">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="{{ name }} — PhD Candidate in Finance">
+    <meta property="og:title" content="{{ name }} â€” PhD Candidate in Finance">
     <meta property="og:description" content="Research in household and behavioral finance using machine learning.">
     <meta property="og:image" content="{{ image_url }}">
     <meta property="og:url" content="https://alexgunsberg.com/">
@@ -24,7 +24,7 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ name }} — PhD in Finance">
+    <meta name="twitter:title" content="{{ name }} â€” PhD in Finance">
     <meta name="twitter:description" content="Researcher in household finance, behavioral economics. Machine learning applied.">
     <meta name="twitter:image" content="{{ image_url }}">
 
@@ -647,7 +647,7 @@
         }
 
         .custom-list li::before {
-            content: "▸";
+            content: "â–¸";
             color: var(--cyber-purple);
             font-weight: bold;
             display: inline-block;
@@ -832,8 +832,8 @@
             <div class="card">
                 <h3 class="card-title">{{ education.phd.degree }}</h3>
                 <p class="card-meta">
-                    <a href="{{ education.phd.program_url }}" target="_blank">{{ education.phd.program }}</a> •
-                    {{ education.phd.institution }} •
+                    <a href="{{ education.phd.program_url }}" target="_blank">{{ education.phd.program }}</a> â€¢
+                    {{ education.phd.institution }} â€¢
                     {{ education.phd.period }}
                 </p>
                 <p class="card-description">{{ education.phd.description }}</p>
@@ -853,7 +853,7 @@
             <div class="card">
                 <h3 class="card-title">{{ education.visiting.position }}</h3>
                 <p class="card-meta">
-                    {{ education.visiting.institution }} • {{ education.visiting.period }}
+                    {{ education.visiting.institution }} â€¢ {{ education.visiting.period }}
                 </p>
                 {% if education.visiting.host %}
                 <p class="card-description">Host: {{ education.visiting.host }}</p>
@@ -967,7 +967,7 @@
                     <div class="badges">
                         {% for pres in pub.presentations %}
                         <span class="badge" title="Presented by {{ pres.presenter }}">
-                    {{ pres.venue }} ({{ pres.year }}){% if pres.presenter %} — {{ pres.presenter }}{% endif %}
+                    {{ pres.venue }} ({{ pres.year }}){% if pres.presenter %} â€” {{ pres.presenter }}{% endif %}
                 </span>
                         {% endfor %}
                     </div>
@@ -1063,7 +1063,7 @@
 <!-- FOOTER -->
 <footer class="footer">
     <div class="container footer-content">
-        <p>© {{ current_year }} {{ name }}. All rights reserved.</p>
+        <p>Â© {{ current_year }} {{ name }}. All rights reserved.</p>
     </div>
 </footer>
 
