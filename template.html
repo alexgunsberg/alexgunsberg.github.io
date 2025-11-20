@@ -9,14 +9,14 @@
     <link rel="alternate" href="https://gunsberg.org/" />
 
     <!-- SEO Meta Tags -->
-    <title>{{ name }} â€” PhD Candidate in Finance | Machine Learning | Hanken School of Economics</title>
+    <title>{{ name }} — PhD Candidate in Finance | Machine Learning | Hanken School of Economics</title>
     <meta name="description" content="PhD candidate in Finance at Hanken School of Economics, specializing in household finance, behavioral finance, and machine learning. Visiting scholar at UNC Kenan-Flagler.">
-    <meta name="keywords" content="Alex GÃ¼nsberg, finance, PhD, Hanken, University, machine learning, household finance, behavioral finance, Nordic Finance Network, UNC Kenan-Flagler, academic CV, researcher">
+    <meta name="keywords" content="Alex Günsberg, finance, PhD, Hanken, University, machine learning, household finance, behavioral finance, Nordic Finance Network, UNC Kenan-Flagler, academic CV, researcher">
     <meta name="author" content="{{ name }}">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="{{ name }} â€” PhD Candidate in Finance">
+    <meta property="og:title" content="{{ name }} — PhD Candidate in Finance">
     <meta property="og:description" content="Research in household and behavioral finance using machine learning.">
     <meta property="og:image" content="{{ image_url }}">
     <meta property="og:url" content="https://alexgunsberg.com/">
@@ -24,7 +24,7 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ name }} â€” PhD in Finance">
+    <meta name="twitter:title" content="{{ name }} — PhD in Finance">
     <meta name="twitter:description" content="Researcher in household finance, behavioral economics. Machine learning applied.">
     <meta name="twitter:image" content="{{ image_url }}">
 
@@ -58,7 +58,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 
     <style>
         /* ===== CSS CUSTOM PROPERTIES ===== */
@@ -623,6 +622,57 @@
             transform: translateY(-1px);
         }
 
+        /* ===== ABSTRACT SECTION - REFINED ===== */
+        .pub-abstract {
+            margin: var(--spacing-md) 0;
+        }
+
+        .abstract-summary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-bg-tertiary);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            list-style: none;
+        }
+
+        .abstract-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .abstract-summary::marker {
+            display: none;
+        }
+
+        .abstract-summary:hover {
+            color: var(--cyber-purple);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .abstract-summary:focus {
+            outline: 2px solid var(--cyber-purple);
+            outline-offset: 2px;
+        }
+
+        .pub-abstract[open] .abstract-summary {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .abstract-text {
+            margin: 0;
+            padding: var(--spacing-sm);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            border-left: 3px solid var(--cyber-purple);
+        }
+
         /* ===== LISTS ===== */
         .custom-list {
             list-style: none;
@@ -647,7 +697,7 @@
         }
 
         .custom-list li::before {
-            content: "â–¸";
+            content: "\25BA";  /* Unicode for bullet point */
             color: var(--cyber-purple);
             font-weight: bold;
             display: inline-block;
@@ -832,8 +882,8 @@
             <div class="card">
                 <h3 class="card-title">{{ education.phd.degree }}</h3>
                 <p class="card-meta">
-                    <a href="{{ education.phd.program_url }}" target="_blank">{{ education.phd.program }}</a> â€¢
-                    {{ education.phd.institution }} â€¢
+                    <a href="{{ education.phd.program_url }}" target="_blank">{{ education.phd.program }}</a> •
+                    {{ education.phd.institution }} •
                     {{ education.phd.period }}
                 </p>
                 <p class="card-description">{{ education.phd.description }}</p>
@@ -853,7 +903,7 @@
             <div class="card">
                 <h3 class="card-title">{{ education.visiting.position }}</h3>
                 <p class="card-meta">
-                    {{ education.visiting.institution }} â€¢ {{ education.visiting.period }}
+                    {{ education.visiting.institution }} • {{ education.visiting.period }}
                 </p>
                 {% if education.visiting.host %}
                 <p class="card-description">Host: {{ education.visiting.host }}</p>
@@ -907,6 +957,13 @@
                 <p class="card-meta">{{ pub.authors }}</p>
                 {% if pub.journal %}
                 <p class="card-meta">{{ pub.journal }}</p>
+                {% endif %}
+
+                {% if pub.abstract %}
+                <details class="pub-abstract">
+                    <summary class="abstract-summary">Abstract</summary>
+                    <p class="abstract-text">{{ pub.abstract }}</p>
+                </details>
                 {% endif %}
 
                 <!-- Publication Links -->
@@ -967,7 +1024,7 @@
                     <div class="badges">
                         {% for pres in pub.presentations %}
                         <span class="badge" title="Presented by {{ pres.presenter }}">
-                    {{ pres.venue }} ({{ pres.year }}){% if pres.presenter %} â€” {{ pres.presenter }}{% endif %}
+                    {{ pres.venue }} ({{ pres.year }}){% if pres.presenter %} &mdash; {{ pres.presenter }}{% endif %}
                 </span>
                         {% endfor %}
                     </div>
@@ -1063,7 +1120,7 @@
 <!-- FOOTER -->
 <footer class="footer">
     <div class="container footer-content">
-        <p>Â© {{ current_year }} {{ name }}. All rights reserved.</p>
+        <p>© {{ current_year }} {{ name }}. All rights reserved.</p>
     </div>
 </footer>
 

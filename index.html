@@ -59,7 +59,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
     <style>
         /* ===== CSS CUSTOM PROPERTIES ===== */
         :root {
@@ -623,6 +622,57 @@
             transform: translateY(-1px);
         }
 
+        /* ===== ABSTRACT SECTION - REFINED ===== */
+        .pub-abstract {
+            margin: var(--spacing-md) 0;
+        }
+
+        .abstract-summary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-bg-tertiary);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            list-style: none;
+        }
+
+        .abstract-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .abstract-summary::marker {
+            display: none;
+        }
+
+        .abstract-summary:hover {
+            color: var(--cyber-purple);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .abstract-summary:focus {
+            outline: 2px solid var(--cyber-purple);
+            outline-offset: 2px;
+        }
+
+        .pub-abstract[open] .abstract-summary {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .abstract-text {
+            margin: 0;
+            padding: var(--spacing-sm);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            border-left: 3px solid var(--cyber-purple);
+        }
+
         /* ===== LISTS ===== */
         .custom-list {
             list-style: none;
@@ -647,7 +697,7 @@
         }
 
         .custom-list li::before {
-            content: "▸";
+            content: "\25BA";  /* Unicode for bullet point */
             color: var(--cyber-purple);
             font-weight: bold;
             display: inline-block;
@@ -801,7 +851,7 @@
                 LinkedIn
             </a>
             
-            <a href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=8819120" class="social-link" target="_blank" rel="noopener">
+            <a href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=1153517" class="social-link" target="_blank" rel="noopener">
                 
                 <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M21.57,6.37l-3.34-3.34a1.22,1.22,0,0,0-1.73,0L2.37,17.15a1.22,1.22,0,0,0,0,1.73l3.34,3.34a1.22,1.22,0,0,0,1.73,0L21.57,8.1a1.22,1.22,0,0,0,0-1.73ZM7.88,19.44,5.12,16.68l9.37-9.37,2.76,2.76Zm10.19-10.19L15.31,6.5l2.76-2.76,2.76,2.76Z"/>
@@ -874,9 +924,10 @@
             </div>
             <div class="card">
                 <p class="card-description">PhD candidate in Finance specializing in Household Finance, Behavioral Finance,
-                and Urban Economics. I apply machine learning and data-driven analysis to
-                real-world financial behaviors and policy challenges. Currently visiting scholar
-                at UNC Kenan-Flagler Business School.</p>
+            and Urban Economics. I apply machine learning and data-driven analysis to
+            real-world financial behaviors and policy challenges. Currently visiting scholar
+            at UNC Kenan-Flagler Business School. Interested in collaborations that bridge research 
+            with practical insights, including with fintech firms, policymakers, and hedge funds.</p>
             </div>
         </section>
 
@@ -956,6 +1007,8 @@
                 
                 <span class="badge badge-accent">Urban Economics</span>
                 
+                <span class="badge badge-accent">Consumer Credit and Defaults</span>
+                
             </div>
         </section>
 
@@ -977,6 +1030,13 @@
                 <p class="card-meta">Working Paper</p>
                 
 
+                
+                <details class="pub-abstract">
+                    <summary class="abstract-summary">Abstract</summary>
+                    <p class="abstract-text">This study uses Finnish loan applicant data from 2019-2024, where financial delinquency outcomes are observed for everyone—even those applicants rejected for the loan—to reveal post-application outcomes. Fairness constraints—for example, U.S. Special Purpose Credit Programs under the Equal Credit Opportunity Act or the EU AI Act—distort markets by focusing on the intermediate phase (approval rates) rather than optimizing the true outcome (post-loan results). Simulations show these policies ignore asymmetric costs (one default offsets six good loans), shrinking lending by 2.1%. Causal estimates find loan take-up raises default risk by 55.6 percentage points for marginal borrowers. Rejections protect vulnerable applicants from intentional and non-intentional risky borrowing behaviors. Centralized default data for algorithmic training and risk disclosures to applicants expand access by maximizing market size.</p>
+                </details>
+                
+
                 <!-- Publication Links -->
                 
 
@@ -991,6 +1051,8 @@
                 <p class="card-meta">Working Paper</p>
                 
 
+                
+
                 <!-- Publication Links -->
                 
 
@@ -1003,43 +1065,43 @@
                     <div class="badges">
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    NYU Stern (2025) — Camelia M. Kuhnen
+                    HEC Lausanne and EPFL (2025) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    HEC Lausanne and EPFL (2025) — Camelia M. Kuhnen
+                    University of Geneva (2025) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    University of Geneva (2025) — Camelia M. Kuhnen
+                    American University (2025) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    American University (2025) — Camelia M. Kuhnen
+                    NYU Stern (2025) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    University of Michigan (2024) — Camelia M. Kuhnen
+                    University of Michigan (2024) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    FDIC (2024) — Camelia M. Kuhnen
+                    FDIC (2024) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    Erasmus University Rotterdam (2024) — Camelia M. Kuhnen
+                    Erasmus University Rotterdam (2024) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    HEC Montreal (2024) — Camelia M. Kuhnen
+                    HEC Montreal (2024) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    Federal Reserve Bank of Philadelphia (2024) — Camelia M. Kuhnen
+                    Federal Reserve Bank of Philadelphia (2024) &mdash; Camelia M. Kuhnen
                 </span>
                         
                         <span class="badge" title="Presented by Camelia M. Kuhnen">
-                    University of South Carolina (2024) — Camelia M. Kuhnen
+                    University of South Carolina (2024) &mdash; Camelia M. Kuhnen
                 </span>
                         
                     </div>
@@ -1050,6 +1112,8 @@
             <div class="card">
                 <h3 class="card-title">(Title TBD)</h3>
                 <p class="card-meta">with Camelia M. Kuhnen and Yunzhi Hu</p>
+                
+
                 
 
                 <!-- Publication Links -->
@@ -1074,12 +1138,12 @@
             <div class="grid">
                 
                 <div class="card">
-                    <h3 class="card-title">Entrepreneur & Technical Co-Founder</h3>
+                    <h3 class="card-title">Entrepreneur & Co-Founder</h3>
                     <p class="card-meta">Multiple startups</p>
                     
                     <p class="card-meta">April 2010 – March 2020</p>
                     
-                    <p class="card-description">Over 10 years as entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi).</p>
+                    <p class="card-description">Entrepreneur & Technical Co-Founder": "Over 10 years as entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi).</p>
                 </div>
                 
                 <div class="card">
@@ -1126,7 +1190,7 @@
                 
                 <div class="card">
                     <h3 class="card-title">Python Data Science</h3>
-                    <p class="card-description">Applying Python libraries for quantitative finance research, including data manipulation, econometrics, machine learning, and visualization.</p>
+                    <p class="card-description">Used for quantitative finance research, including panel data analysis, econometric modeling, and machine learning for behavioral default predictions.</p>
                     <div class="badges">
                         
                         <span class="badge">Python</span>
@@ -1139,7 +1203,9 @@
                         
                         <span class="badge">Scikit-learn</span>
                         
-                        <span class="badge">Plotting Libraries (Matplotlib, Seaborn)</span>
+                        <span class="badge">Matplotlib</span>
+                        
+                        <span class="badge">Seaborn</span>
                         
                         <span class="badge">SQL</span>
                         
@@ -1155,7 +1221,7 @@
                         
                         <span class="badge">Git</span>
                         
-                        <span class="badge">LaTeX (via Overleaf, Python integration)</span>
+                        <span class="badge">LaTeX</span>
                         
                     </div>
                 </div>

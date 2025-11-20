@@ -15,9 +15,10 @@ WEBSITE_DATA = {
 
     # FINAL BIO:
     "about_me": """PhD candidate in Finance specializing in Household Finance, Behavioral Finance,
-                and Urban Economics. I apply machine learning and data-driven analysis to
-                real-world financial behaviors and policy challenges. Currently visiting scholar
-                at UNC Kenan-Flagler Business School.""",
+            and Urban Economics. I apply machine learning and data-driven analysis to
+            real-world financial behaviors and policy challenges. Currently visiting scholar
+            at UNC Kenan-Flagler Business School. Interested in collaborations that bridge research 
+            with practical insights, including with fintech firms, policymakers, and hedge funds.""",
 
     "education": {
         "phd": {
@@ -98,6 +99,7 @@ WEBSITE_DATA = {
         "Household Finance",
         "Behavioral Finance",
         "Urban Economics",
+        "Consumer Credit and Defaults",
     ],
 
     "publications": [
@@ -106,6 +108,7 @@ WEBSITE_DATA = {
             "authors": "Alex P. Günsberg",
             "journal": "Working Paper",
             "bibtex": "",
+            "abstract": "This study uses Finnish loan applicant data from 2019-2024, where financial delinquency outcomes are observed for everyone—even those applicants rejected for the loan—to reveal post-application outcomes. Fairness constraints—for example, U.S. Special Purpose Credit Programs under the Equal Credit Opportunity Act or the EU AI Act—distort markets by focusing on the intermediate phase (approval rates) rather than optimizing the true outcome (post-loan results). Simulations show these policies ignore asymmetric costs (one default offsets six good loans), shrinking lending by 2.1%. Causal estimates find loan take-up raises default risk by 55.6 percentage points for marginal borrowers. Rejections protect vulnerable applicants from intentional and non-intentional risky borrowing behaviors. Centralized default data for algorithmic training and risk disclosures to applicants expand access by maximizing market size.",
             "paper_url": "",
             "code_url": "",
             "slides_url": "",
@@ -121,11 +124,6 @@ WEBSITE_DATA = {
             "slides_url": "",
             "presentations": [  # ← List of presentations for THIS paper
                 {
-                    "venue": "NYU Stern",
-                    "year": 2025,
-                    "presenter": "Camelia M. Kuhnen"
-                },
-                {
                     "venue": "HEC Lausanne and EPFL",
                     "year": 2025,
                     "presenter": "Camelia M. Kuhnen"
@@ -137,6 +135,11 @@ WEBSITE_DATA = {
                 },
                 {
                     "venue": "American University",
+                    "year": 2025,
+                    "presenter": "Camelia M. Kuhnen"
+                },
+                {
+                    "venue": "NYU Stern",
                     "year": 2025,
                     "presenter": "Camelia M. Kuhnen"
                 },
@@ -196,10 +199,10 @@ WEBSITE_DATA = {
 
     "industry_experience": [
         {
-            "role": "Entrepreneur & Technical Co-Founder",
+            "role": "Entrepreneur & Co-Founder",
             "organization": "Multiple startups",
             "period": "April 2010 – March 2020",
-            "description": "Over 10 years as entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi)."
+            "description": """Entrepreneur & Technical Co-Founder": "Over 10 years as entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi)."""
         },
         {
             "role": "Data Scientist",
@@ -224,12 +227,12 @@ WEBSITE_DATA = {
     # Technical Skills:
     "technical_skills": {
         "python_data_science": {
-            "description": "Applying Python libraries for quantitative finance research, including data manipulation, econometrics, machine learning, and visualization.",
-            "tools": ["Python", "SciPy", "Statsmodels", "Linearmodels", "Scikit-learn", "Plotting Libraries (Matplotlib, Seaborn)", "SQL", "AWS"]
+            "description": "Used for quantitative finance research, including panel data analysis, econometric modeling, and machine learning for behavioral default predictions.",
+            "tools": ["Python", "SciPy", "Statsmodels", "Linearmodels", "Scikit-learn", "Matplotlib", "Seaborn", "SQL", "AWS"]
         },
         "research_and_reporting": {
             "description": "Utilizing standard tools for version control, collaboration, and academic publishing.",
-            "tools": ["Git", "LaTeX (via Overleaf, Python integration)"]
+            "tools": ["Git", "LaTeX"]
         }
     }
 }
