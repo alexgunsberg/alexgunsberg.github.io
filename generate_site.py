@@ -40,8 +40,9 @@ WEBSITE_DATA = {
             {
                 "name": "Nordic Finance Network (NFN)",
                 "url": "https://nfn.aalto.fi",
-                "description": "Selective doctoral training network for Nordic finance researchers. Members "
-                               "collaborate on empirical research and present at network workshops."
+                "description": "Selective doctoral training network for Nordic finance researchers, hosted by the "
+                               "Graduate School of Finance (GSF). Members collaborate on empirical research and "
+                               "present at network workshops."
             }
         ],
 
