@@ -466,6 +466,29 @@
             line-height: 1.4;
         }
 
+        .jmp-badge {
+            display: inline-block;
+            margin-left: var(--spacing-sm);
+            padding: 0 var(--spacing-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--cyber-purple);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 999px;
+            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .jmp-badge:hover,
+        .jmp-badge:focus {
+            color: var(--cyber-purple);
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--cyber-purple);
+            outline: none; /* or add your site’s focus ring if desired */
+        }
+
         .card-meta {
             font-size: var(--font-size-sm);
             color: var(--color-text-secondary);
@@ -958,11 +981,11 @@
                 </h2>
             </div>
             <div class="card">
-                <p class="card-description">PhD candidate in Finance specializing in Household Finance, Behavioral Finance,
-            and Urban Economics. I apply machine learning and data-driven analysis to
-            real-world financial behaviors and policy challenges. Currently visiting scholar
-            at UNC Kenan-Flagler Business School. Interested in collaborations that bridge research 
-            with practical insights, including with fintech firms, policymakers, and hedge funds.</p>
+                <p class="card-description">PhD candidate in Finance specializing in Household Finance, Behavioral Finance, 
+    and Urban Economics, with a focus on consumer credit and default prediction. I apply machine 
+    learning and data-driven analysis to real-world financial behaviors and policy challenges. Currently 
+    visiting scholar at UNC Kenan-Flagler Business School. Interested in collaborations that bridge research 
+    with practical insights, including with fintech firms, policymakers, and hedge funds.</p>
             </div>
         </section>
 
@@ -1059,11 +1082,17 @@
             </div>
             
             <div class="card">
-                <h3 class="card-title">(Job Market Paper) Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending</h3>
+                <h3 class="card-title">
+                    Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic LendingConstraints in Algorithmic Lending
+                    
+                    <span class="jmp-badge">Job Market Paper</span>
+                    
+                </h3>
                 <p class="card-meta">Alex P. Günsberg</p>
                 
                 <p class="card-meta">Working Paper</p>
                 
+
 
                 
                 <details class="pub-abstract">
@@ -1080,11 +1109,15 @@
             </div>
             
             <div class="card">
-                <h3 class="card-title">Learning How to Borrow in a Fintech World</h3>
+                <h3 class="card-title">
+                    Learning How to Borrow in a Fintech World
+                    
+                </h3>
                 <p class="card-meta">Alex P. Günsberg, <a href="https://sites.google.com/view/cameliakuhnen/" target="_blank" rel="noopener noreferrer">Camelia M. Kuhnen</a></p>
                 
                 <p class="card-meta">Working Paper</p>
                 
+
 
                 
                 <details class="pub-abstract">
@@ -1150,9 +1183,13 @@
             </div>
             
             <div class="card">
-                <h3 class="card-title">(Title TBD)</h3>
+                <h3 class="card-title">
+                    (Title TBD)
+                    
+                </h3>
                 <p class="card-meta">Alex P. Günsberg, <a href="https://sites.google.com/view/cameliakuhnen/" target="_blank" rel="noopener noreferrer">Camelia M. Kuhnen</a>, <a href="https://yunzhihu.web.unc.edu/" target="_blank" rel="noopener noreferrer">Yunzhi Hu</a></p>
                 
+
 
                 
 

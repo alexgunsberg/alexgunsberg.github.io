@@ -14,11 +14,11 @@ WEBSITE_DATA = {
     "image_url": "Alex_Gunsberg_web_half.jpg",
 
     # FINAL BIO:
-    "about_me": """PhD candidate in Finance specializing in Household Finance, Behavioral Finance,
-            and Urban Economics. I apply machine learning and data-driven analysis to
-            real-world financial behaviors and policy challenges. Currently visiting scholar
-            at UNC Kenan-Flagler Business School. Interested in collaborations that bridge research 
-            with practical insights, including with fintech firms, policymakers, and hedge funds.""",
+    "about_me": """PhD candidate in Finance specializing in Household Finance, Behavioral Finance, 
+    and Urban Economics, with a focus on consumer credit and default prediction. I apply machine 
+    learning and data-driven analysis to real-world financial behaviors and policy challenges. Currently 
+    visiting scholar at UNC Kenan-Flagler Business School. Interested in collaborations that bridge research 
+    with practical insights, including with fintech firms, policymakers, and hedge funds.""",
 
     "education": {
         "phd": {
@@ -28,7 +28,9 @@ WEBSITE_DATA = {
             "institution": "Hanken School of Economics",
             "period": "September 2021 – Present",
             "location": "Helsinki, Finland",
-            "description": "Finland's national doctoral program in finance. Joint venture of seven universities. Recent graduate placements include London Business School, Imperial College London, Ohio State University, and Erasmus Rotterdam.",
+            "description": "Finland's national doctoral program in finance. Joint venture of seven "
+                           "universities. Recent graduate placements include London Business School, Imperial "
+                           "College London, Ohio State University, and Erasmus Rotterdam.",
             "supervisors": [
                 "Professor Camelia M. Kuhnen (UNC Kenan-Flagler Business School)",
                 "Professor Anders Löflund (Hanken School of Economics)"
@@ -38,7 +40,8 @@ WEBSITE_DATA = {
             {
                 "name": "Nordic Finance Network (NFN)",
                 "url": "https://nfn.aalto.fi",
-                "description": "Selective doctoral training network for Nordic finance researchers. Members collaborate on empirical research and present at network workshops."
+                "description": "Selective doctoral training network for Nordic finance researchers. Members "
+                               "collaborate on empirical research and present at network workshops."
             }
         ],
 
@@ -104,11 +107,23 @@ WEBSITE_DATA = {
 
     "publications": [
         {
-            "title": "(Job Market Paper) Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending",
+            "title": "Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending"
+                     "Constraints in Algorithmic Lending",
+            "is_jmp": True,
             "authors": "Alex P. Günsberg",
             "journal": "Working Paper",
             "bibtex": "",
-            "abstract": "This study uses Finnish loan applicant data from 2019-2024, where financial delinquency outcomes are observed for everyone—even those applicants rejected for the loan—to reveal post-application outcomes. Fairness constraints—for example, U.S. Special Purpose Credit Programs under the Equal Credit Opportunity Act or the EU AI Act—distort markets by focusing on the intermediate phase (approval rates) rather than optimizing the true outcome (post-loan results). Simulations show these policies ignore asymmetric costs (one default offsets six good loans), shrinking lending by 2.1%. Causal estimates find loan take-up raises default risk by 55.6 percentage points for marginal borrowers. Rejections protect vulnerable applicants from intentional and non-intentional risky borrowing behaviors. Centralized default data for algorithmic training and risk disclosures to applicants expand access by maximizing market size.",
+            "abstract": "This study uses Finnish loan applicant data from 2019-2024, where financial "
+                        "delinquency outcomes are observed for everyone—even those applicants rejected for "
+                        "the loan—to reveal post-application outcomes. Fairness constraints—for example, U.S. "
+                        "Special Purpose Credit Programs under the Equal Credit Opportunity Act or the EU AI "
+                        "Act—distort markets by focusing on the intermediate phase (approval rates) rather than "
+                        "optimizing the true outcome (post-loan results). Simulations show these policies ignore "
+                        "asymmetric costs (one default offsets six good loans), shrinking lending by 2.1%. Causal "
+                        "estimates find loan take-up raises default risk by 55.6 percentage points for marginal "
+                        "borrowers. Rejections protect vulnerable applicants from intentional and non-intentional "
+                        "risky borrowing behaviors. Centralized default data for algorithmic training and risk "
+                        "disclosures to applicants expand access by maximizing market size.",
             "paper_url": "",
             "code_url": "",
             "slides_url": "",
@@ -207,28 +222,34 @@ WEBSITE_DATA = {
     ],
 
     # In WEBSITE_DATA
-    "awards_and_grants": "Secured funding from over 15 competitive grants for research, travel, and working support from various economic, research, and cultural foundations.",
+    "awards_and_grants": "Secured funding from over 15 competitive grants for research, travel, and "
+                         "working support from various economic, research, and cultural foundations.",
 
     "industry_experience": [
         {
             "role": "Entrepreneur & Co-Founder",
             "organization": "Multiple startups",
             "period": "April 2010 – August 2025",
-            "description": "Over 10 years as an entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi). Gained hands-on insights into fintech metrics like user acquisition costs, mirroring delinquency forecasting.",
+            "description": "Over 10 years as an entrepreneur: founded multiple ventures, raised €3M+ "
+                           "from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi). "
+                           "Gained hands-on insights into fintech metrics like user acquisition costs, "
+                           "mirroring delinquency forecasting.",
             "highlight": "Startups",
         },
         {
             "role": "Data Scientist",
             "organization": "Silicon Labs (formerly NASDAQ-listed semiconductor)",
             "period": "September 2020 – August 2021",
-            "description": "Built end-to-end forecasting pipelines (MSSQL → AWS ML → Tableau) on transactional data—analogous to ingesting lender tapes for ABS default models.",
+            "description": "Built end-to-end forecasting pipelines (MSSQL → AWS ML → Tableau) on transactional "
+                           "data—analogous to ingesting lender tapes for ABS default models.",
             "highlight": "Tech/Data Science",
         },
         {
             "role": "Senior Sales Manager",
             "organization": "Estlander & Partners (algorithm-based hedge fund, cta)",
             "period": "January 2011 – February 2013",
-            "description": "Managed sales for a quantitative hedge fund; gained deep exposure to systematic trading strategies, now informing my research on consumer behavior and default prediction.",
+            "description": "Managed sales for a quantitative hedge fund; gained deep exposure to systematic "
+                           "trading strategies, now informing my research on consumer behavior and default prediction.",
             "highlight": "Hedge Funds",
         },
     ],
@@ -236,15 +257,21 @@ WEBSITE_DATA = {
     # Technical Skills:
     "technical_skills": {
         "python_data_science": {
-            "description": "Applied in quantitative finance research and analysis of large-scale datasets, including panel data wrangling, econometric modeling, machine learning for behavioral default predictions, and processing transaction-level credit data for risk forecasting.",
-            "tools": ["Python", "Pandas/Polars", "XGBoost", "Neural Networks", "CausalML", "Survival Models", "SciPy", "Statsmodels", "Linearmodels", "Scikit-learn", "Matplotlib", "Seaborn",]
+            "description": "Applied in quantitative finance research and analysis of large-scale datasets, "
+                           "including panel data wrangling, econometric modeling, machine learning for behavioral "
+                           "default predictions, and processing transaction-level credit data for risk forecasting.",
+            "tools": ["Python", "Pandas/Polars", "XGBoost", "Neural Networks", "CausalML", "Survival Models",
+                      "SciPy", "Statsmodels", "Linearmodels", "Scikit-learn", "Matplotlib", "Seaborn",
+                      ]
         },
         "research_and_reporting": {
-            "description": "Standard tools for version control, collaboration, academic publishing, and reproducible research pipelines.",
+            "description": "Standard tools for version control, collaboration, academic publishing, and "
+                           "reproducible research pipelines.",
             "tools": ["Git", "LaTeX", "IDE", "Jupyter/Colab"]
         },
         "data_engineering_and_cloud": {
-            "description": "Tools for managing and processing high-volume financial datasets, including ETL pipelines for transaction-level data and cloud-based workflows.",
+            "description": "Tools for managing and processing high-volume financial datasets, including "
+                           "ETL pipelines for transaction-level data and cloud-based workflows.",
             "tools": ["AWS S3/EC2", "SQLAlchemy", "SQL", "Dask", "ETL Frameworks"]
         },
     }
