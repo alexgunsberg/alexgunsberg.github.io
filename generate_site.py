@@ -116,7 +116,11 @@ WEBSITE_DATA = {
         },
         {
             "title": "Learning How to Borrow in a Fintech World",
-            "authors": "with Camelia M. Kuhnen",
+            "authors": (
+                    "Alex P. Günsberg, "
+                    "<a href=\"https://sites.google.com/view/cameliakuhnen/\" "
+                    "target=\"_blank\" rel=\"noopener noreferrer\">Camelia M. Kuhnen</a>"
+                ),
             "journal": "Working Paper",
             "bibtex": "",
             "abstract": "Online loan marketplaces are changing consumer lending.  Here we investigate how consumers search, learn, and make borrowing choices in this new type of market, which is characterized by close to zero search costs. We use administrative data from a large online consumer lending platform, covering 730,000 loan applications, 750,000 resulting loan offers, and more than 200,000 individuals in Finland, and supplement this with credit registry data. We document four facts. First, there are high benefits to search, as there exists significant within-applicant dispersion in terms offered by lenders. Second, soft nudges by the platform help consumers make loan choices. Third, applicants search significantly, by applying multiple times, asking for loans with different terms, and rejecting a majority of offers, in ways that suggest that individuals understand their type as borrowers. Fourth, this is a dynamic adverse selection environment, as lenders are less likely to make loans to repeat applicants, who are inferred to be worse types, which implies that consumers' search strategy need to balance informational benefits and reputational costs.",
@@ -178,7 +182,13 @@ WEBSITE_DATA = {
         },
         {
             "title": "(Title TBD)",
-            "authors": "with Camelia M. Kuhnen and Yunzhi Hu",
+            "authors":  (
+                "Alex P. Günsberg, "
+                "<a href=\"https://sites.google.com/view/cameliakuhnen/\" "
+                "target=\"_blank\" rel=\"noopener noreferrer\">Camelia M. Kuhnen</a>, "
+                "<a href=\"https://yunzhihu.web.unc.edu/\" "
+                "target=\"_blank\" rel=\"noopener noreferrer\">Yunzhi Hu</a>"
+            ),
             "journal": "",
             "bibtex": "",
             "abstract": "",
