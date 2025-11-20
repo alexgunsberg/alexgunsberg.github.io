@@ -784,6 +784,41 @@
             }
         }
 
+        /* Industry Experience Highlight Badge */
+        .card-highlight {
+            display: inline-block;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--cyber-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+
+        .card-highlight:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--cyber-purple);
+            transform: translateX(3px);
+        }
+
+        /* Dark mode adjustment */
+        body.dark-mode .card-highlight {
+            color: var(--cyber-pink);
+            background: rgba(236, 72, 153, 0.15);
+            border-color: rgba(236, 72, 153, 0.3);
+        }
+
+        body.dark-mode .card-highlight:hover {
+            background: rgba(236, 72, 153, 0.2);
+            border-color: var(--cyber-pink);
+        }
+
+
         /* ===== ANIMATIONS ===== */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
@@ -1052,6 +1087,11 @@
                 
 
                 
+                <details class="pub-abstract">
+                    <summary class="abstract-summary">Abstract</summary>
+                    <p class="abstract-text">Online loan marketplaces are changing consumer lending.  Here we investigate how consumers search, learn, and make borrowing choices in this new type of market, which is characterized by close to zero search costs. We use administrative data from a large online consumer lending platform, covering 730,000 loan applications, 750,000 resulting loan offers, and more than 200,000 individuals in Finland, and supplement this with credit registry data. We document four facts. First, there are high benefits to search, as there exists significant within-applicant dispersion in terms offered by lenders. Second, soft nudges by the platform help consumers make loan choices. Third, applicants search significantly, by applying multiple times, asking for loans with different terms, and rejecting a majority of offers, in ways that suggest that individuals understand their type as borrowers. Fourth, this is a dynamic adverse selection environment, as lenders are less likely to make loans to repeat applicants, who are inferred to be worse types, which implies that consumers' search strategy need to balance informational benefits and reputational costs.</p>
+                </details>
+                
 
                 <!-- Publication Links -->
                 
@@ -1138,43 +1178,44 @@
             <div class="grid">
                 
                 <div class="card">
+                    
+                    <div class="card-highlight">Startups</div>
+                    
                     <h3 class="card-title">Entrepreneur & Co-Founder</h3>
                     <p class="card-meta">Multiple startups</p>
                     
-                    <p class="card-meta">April 2010 – March 2020</p>
+                    <p class="card-meta">April 2010 – August 2025</p>
                     
-                    <p class="card-description">Entrepreneur & Technical Co-Founder": "Over 10 years as entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi).</p>
+                    <p class="card-description">Over 10 years as an entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi). Gained hands-on insights into fintech metrics like user acquisition costs, mirroring delinquency forecasting.</p>
                 </div>
                 
                 <div class="card">
+                    
+                    <div class="card-highlight">Tech/Data Science</div>
+                    
                     <h3 class="card-title">Data Scientist</h3>
                     <p class="card-meta">Silicon Labs (formerly NASDAQ-listed semiconductor)</p>
                     
                     <p class="card-meta">September 2020 – August 2021</p>
                     
-                    <p class="card-description">Solo architect of production forecasting system: MSSQL ETL → AWS SageMaker/Forecast models → Tableau dashboards. Built automated data pipelines (S3, Python, SQL) processing proprietary transactional records with scheduled predictions.</p>
+                    <p class="card-description">Built end-to-end forecasting pipelines (MSSQL → AWS ML → Tableau) on transactional data—analogous to ingesting lender tapes for ABS default models.</p>
                 </div>
                 
                 <div class="card">
+                    
+                    <div class="card-highlight">Hedge Funds</div>
+                    
                     <h3 class="card-title">Senior Sales Manager</h3>
-                    <p class="card-meta">Estlander & Partners (algorithm-based hedge fund)</p>
+                    <p class="card-meta">Estlander & Partners (algorithm-based hedge fund, cta)</p>
                     
                     <p class="card-meta">January 2011 – February 2013</p>
                     
-                    <p class="card-description">Specialized in systematic trading strategies and quantitative investment approaches</p>
-                </div>
-                
-                <div class="card">
-                    <h3 class="card-title">Business Area Manager</h3>
-                    <p class="card-meta">Aalto University Executive Education</p>
-                    
-                    <p class="card-meta">June 2014 – June 2015</p>
-                    
-                    <p class="card-description">Managed program development and client relationships</p>
+                    <p class="card-description">Managed sales for a quantitative hedge fund; gained deep exposure to systematic trading strategies, now informing my research on consumer behavior and default prediction.</p>
                 </div>
                 
             </div>
         </section>
+
 
         <!-- TECHNICAL SKILLS -->
         <section class="section">
@@ -1190,10 +1231,20 @@
                 
                 <div class="card">
                     <h3 class="card-title">Python Data Science</h3>
-                    <p class="card-description">Used for quantitative finance research, including panel data analysis, econometric modeling, and machine learning for behavioral default predictions.</p>
+                    <p class="card-description">Applied in quantitative finance research and analysis of large-scale datasets, including panel data wrangling, econometric modeling, machine learning for behavioral default predictions, and processing transaction-level credit data for risk forecasting.</p>
                     <div class="badges">
                         
                         <span class="badge">Python</span>
+                        
+                        <span class="badge">Pandas/Polars</span>
+                        
+                        <span class="badge">XGBoost</span>
+                        
+                        <span class="badge">Neural Networks</span>
+                        
+                        <span class="badge">CausalML</span>
+                        
+                        <span class="badge">Survival Models</span>
                         
                         <span class="badge">SciPy</span>
                         
@@ -1207,21 +1258,39 @@
                         
                         <span class="badge">Seaborn</span>
                         
-                        <span class="badge">SQL</span>
-                        
-                        <span class="badge">AWS</span>
-                        
                     </div>
                 </div>
                 
                 <div class="card">
                     <h3 class="card-title">Research And Reporting</h3>
-                    <p class="card-description">Utilizing standard tools for version control, collaboration, and academic publishing.</p>
+                    <p class="card-description">Standard tools for version control, collaboration, academic publishing, and reproducible research pipelines.</p>
                     <div class="badges">
                         
                         <span class="badge">Git</span>
                         
                         <span class="badge">LaTeX</span>
+                        
+                        <span class="badge">IDE</span>
+                        
+                        <span class="badge">Jupyter/Colab</span>
+                        
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">Data Engineering And Cloud</h3>
+                    <p class="card-description">Tools for managing and processing high-volume financial datasets, including ETL pipelines for transaction-level data and cloud-based workflows.</p>
+                    <div class="badges">
+                        
+                        <span class="badge">AWS S3/EC2</span>
+                        
+                        <span class="badge">SQLAlchemy</span>
+                        
+                        <span class="badge">SQL</span>
+                        
+                        <span class="badge">Dask</span>
+                        
+                        <span class="badge">ETL Frameworks</span>
                         
                     </div>
                 </div>

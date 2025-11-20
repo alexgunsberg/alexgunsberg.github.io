@@ -119,6 +119,7 @@ WEBSITE_DATA = {
             "authors": "with Camelia M. Kuhnen",
             "journal": "Working Paper",
             "bibtex": "",
+            "abstract": "Online loan marketplaces are changing consumer lending.  Here we investigate how consumers search, learn, and make borrowing choices in this new type of market, which is characterized by close to zero search costs. We use administrative data from a large online consumer lending platform, covering 730,000 loan applications, 750,000 resulting loan offers, and more than 200,000 individuals in Finland, and supplement this with credit registry data. We document four facts. First, there are high benefits to search, as there exists significant within-applicant dispersion in terms offered by lenders. Second, soft nudges by the platform help consumers make loan choices. Third, applicants search significantly, by applying multiple times, asking for loans with different terms, and rejecting a majority of offers, in ways that suggest that individuals understand their type as borrowers. Fourth, this is a dynamic adverse selection environment, as lenders are less likely to make loans to repeat applicants, who are inferred to be worse types, which implies that consumers' search strategy need to balance informational benefits and reputational costs.",
             "paper_url": "",
             "code_url": "",
             "slides_url": "",
@@ -180,6 +181,7 @@ WEBSITE_DATA = {
             "authors": "with Camelia M. Kuhnen and Yunzhi Hu",
             "journal": "",
             "bibtex": "",
+            "abstract": "",
             "paper_url": "",
             "code_url": "",
             "slides_url": "",
@@ -201,39 +203,40 @@ WEBSITE_DATA = {
         {
             "role": "Entrepreneur & Co-Founder",
             "organization": "Multiple startups",
-            "period": "April 2010 – March 2020",
-            "description": """Entrepreneur & Technical Co-Founder": "Over 10 years as entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi)."""
+            "period": "April 2010 – August 2025",
+            "description": "Over 10 years as an entrepreneur: founded multiple ventures, raised €3M+ from VCs and angels, and sold two companies (omadesign.fi, brandphoto.fi). Gained hands-on insights into fintech metrics like user acquisition costs, mirroring delinquency forecasting.",
+            "highlight": "Startups",
         },
         {
             "role": "Data Scientist",
             "organization": "Silicon Labs (formerly NASDAQ-listed semiconductor)",
             "period": "September 2020 – August 2021",
-            "description": "Solo architect of production forecasting system: MSSQL ETL → AWS SageMaker/Forecast models → Tableau dashboards. Built automated data pipelines (S3, Python, SQL) processing proprietary transactional records with scheduled predictions."
+            "description": "Built end-to-end forecasting pipelines (MSSQL → AWS ML → Tableau) on transactional data—analogous to ingesting lender tapes for ABS default models.",
+            "highlight": "Tech/Data Science",
         },
         {
             "role": "Senior Sales Manager",
-            "organization": "Estlander & Partners (algorithm-based hedge fund)",
+            "organization": "Estlander & Partners (algorithm-based hedge fund, cta)",
             "period": "January 2011 – February 2013",
-            "description": "Specialized in systematic trading strategies and quantitative investment approaches"
+            "description": "Managed sales for a quantitative hedge fund; gained deep exposure to systematic trading strategies, now informing my research on consumer behavior and default prediction.",
+            "highlight": "Hedge Funds",
         },
-        {
-            "role": "Business Area Manager",
-            "organization": "Aalto University Executive Education",
-            "period": "June 2014 – June 2015",
-            "description": "Managed program development and client relationships"
-        }
     ],
 
     # Technical Skills:
     "technical_skills": {
         "python_data_science": {
-            "description": "Used for quantitative finance research, including panel data analysis, econometric modeling, and machine learning for behavioral default predictions.",
-            "tools": ["Python", "SciPy", "Statsmodels", "Linearmodels", "Scikit-learn", "Matplotlib", "Seaborn", "SQL", "AWS"]
+            "description": "Applied in quantitative finance research and analysis of large-scale datasets, including panel data wrangling, econometric modeling, machine learning for behavioral default predictions, and processing transaction-level credit data for risk forecasting.",
+            "tools": ["Python", "Pandas/Polars", "XGBoost", "Neural Networks", "CausalML", "Survival Models", "SciPy", "Statsmodels", "Linearmodels", "Scikit-learn", "Matplotlib", "Seaborn",]
         },
         "research_and_reporting": {
-            "description": "Utilizing standard tools for version control, collaboration, and academic publishing.",
-            "tools": ["Git", "LaTeX"]
-        }
+            "description": "Standard tools for version control, collaboration, academic publishing, and reproducible research pipelines.",
+            "tools": ["Git", "LaTeX", "IDE", "Jupyter/Colab"]
+        },
+        "data_engineering_and_cloud": {
+            "description": "Tools for managing and processing high-volume financial datasets, including ETL pipelines for transaction-level data and cloud-based workflows.",
+            "tools": ["AWS S3/EC2", "SQLAlchemy", "SQL", "Dask", "ETL Frameworks"]
+        },
     }
 }
 

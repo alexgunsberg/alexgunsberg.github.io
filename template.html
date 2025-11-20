@@ -784,6 +784,41 @@
             }
         }
 
+        /* Industry Experience Highlight Badge */
+        .card-highlight {
+            display: inline-block;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--cyber-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+
+        .card-highlight:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--cyber-purple);
+            transform: translateX(3px);
+        }
+
+        /* Dark mode adjustment */
+        body.dark-mode .card-highlight {
+            color: var(--cyber-pink);
+            background: rgba(236, 72, 153, 0.15);
+            border-color: rgba(236, 72, 153, 0.3);
+        }
+
+        body.dark-mode .card-highlight:hover {
+            background: rgba(236, 72, 153, 0.2);
+            border-color: var(--cyber-pink);
+        }
+
+
         /* ===== ANIMATIONS ===== */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
@@ -1047,6 +1082,9 @@
             <div class="grid">
                 {% for exp in industry_experience %}
                 <div class="card">
+                    {% if exp.highlight %}
+                    <div class="card-highlight">{{ exp.highlight }}</div>
+                    {% endif %}
                     <h3 class="card-title">{{ exp.role }}</h3>
                     <p class="card-meta">{{ exp.organization }}</p>
                     {% if exp.period %}
@@ -1057,6 +1095,7 @@
                 {% endfor %}
             </div>
         </section>
+
 
         <!-- TECHNICAL SKILLS -->
         <section class="section">
