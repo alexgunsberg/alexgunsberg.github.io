@@ -108,8 +108,7 @@ WEBSITE_DATA = {
 
     "publications": [
         {
-            "title": "Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending"
-                     "Constraints in Algorithmic Lending",
+            "title": "Misconceived Rejections: Equilibrium Effects of Fairness Constraints in Algorithmic Lending",
             "is_jmp": True,
             "authors": "Alex P. Günsberg",
             "journal": "Working Paper",
@@ -125,7 +124,7 @@ WEBSITE_DATA = {
                         "borrowers. Rejections protect vulnerable applicants from intentional and non-intentional "
                         "risky borrowing behaviors. Centralized default data for algorithmic training and risk "
                         "disclosures to applicants expand access by maximizing market size.",
-            "paper_url": "",
+            "paper_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5994374",
             "code_url": "",
             "slides_url": "",
             "presentations": []  # ← Placeholder for future presentations
